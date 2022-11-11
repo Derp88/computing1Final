@@ -34,8 +34,8 @@ class db_interactor(object):
 def main():
     database_io = db_interactor()
     #This is to add test data
-    #database_io.setMatchData(292, 1, 1, 1, 3, 5, 0, 2)
-    database_io.returnTeamMatchData(11,1741)
+    database_io.setMatchData(1, 292, 1, 1, 3, 5, 0, 2)
+    #database_io.returnTeamMatchData(11,1741)
 
 
 if __name__ == "__main__":
