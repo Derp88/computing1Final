@@ -1,3 +1,8 @@
+<%
+from bottle import request
+matchNumber = requests.forms.get("matchNumberForm")
+%>
+
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -7,7 +12,11 @@
 <body>
     <h1>Your data was sent!</h1>
     <p>
-        <a href = "menu.html">Click to return to main menu</a>
+        <a href = "/menu">Click to return to main menu</a>
+    </p>
+    <h2>The data you sent</h2>
+    <p>
+        Match: {{ matchNumber }}
     </p>
 </body>
 </html>
