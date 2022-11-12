@@ -1,13 +1,13 @@
 <%
 from bottle import request
 matchNumber = request.forms.get("matchNumberForm")
-teamNumber = request.forms.get("matchNumberForm")
-autoLowScore = request.forms.get("matchNumberForm")
-autoHighScore = request.forms.get("matchNumberForm")
-movedOffLine = request.forms.get("matchNumberForm")
-teleLowScore = request.forms.get("matchNumberForm")
-teleHighScore = request.forms.get("matchNumberForm")
-climbBarSpot = request.forms.get("matchNumberForm")
+teamNumber = request.forms.get("teamNumberForm")
+autoLowScore = request.forms.get("autoLowScoreForm")
+autoHighScore = request.forms.get("autoHighScoreForm")
+movedOffLine = request.forms.get("movedOffLineForm")
+teleLowScore = request.forms.get("teleLowScoreForm")
+teleHighScore = request.forms.get("teleHighScoreForm")
+climbBarSpot = request.forms.get("climbBarSpotForm")
 %>
 
 <!DOCTYPE HTML>
@@ -23,7 +23,14 @@ climbBarSpot = request.forms.get("matchNumberForm")
     </p>
     <h2>The data you sent</h2>
     <p>
-        Match: {{ matchNumber }}
+        Match: {{ matchNumber }} <br>
+        Team Number : {{ teamNumber }} <br>
+        Moved from start in auto: {{ movedOffLine }} <br>
+        Auto Low Goal Score: {{ autoLowScore }} <br>
+        Auto High Goal Score: {{ autoHighScore }} <br>
+        Teleoperated Low Goal Score: {{ teleLowScore}} <br>
+        Teleoperated High Goal Score: {{ teleHighScore }} <br>
+        What bar did they climb to: {{ climbBarSpot }}
     </p>
 </body>
 </html>
