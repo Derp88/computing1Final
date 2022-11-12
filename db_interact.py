@@ -14,6 +14,25 @@ class db_interactor(object):
     def setMatchData(self, matchNumber, teamNumber, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot):
         #Create the cursor
         cur = db.cursor()
+
+        matchesTableSetup = """
+    CREATE TABLE matches (
+    id INTEGER PRIMARY KEY,
+    matchNumber INTEGER,
+    teamNumber INTEGER,
+    autoLowScore INTEGER,
+    autoHighScore INTEGER,
+    movedOffLine INTEGER,
+    teleLowScore INTEGER,
+    teleHighScore INTEGER,
+    climbBarSpot INTEGER
+    )
+    """
+        cur.execute(matchesTableSetup)
+        db.commit()
+
+
+
         #Insert match data into DB
         cur.execute("INSERT INTO matches VALUES(null, ?, ?, ?, ?, ?, ?, ?, ?)",(matchNumber, teamNumber, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot))
         db.commit()
