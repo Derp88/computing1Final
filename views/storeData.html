@@ -1,13 +1,20 @@
 <%
 from bottle import request
+from db_interact import db_interactor
+
 matchNumber = request.forms.get("matchNumberForm")
 teamNumber = request.forms.get("teamNumberForm")
-autoLowScore = request.forms.get("autoLowScoreForm")
-autoHighScore = request.forms.get("autoHighScoreForm")
+autoLowScore = request.forms.get("autoLowScoreForm") * 2
+autoHighScore = request.forms.get("autoHighScoreForm") * 4
 movedOffLine = request.forms.get("movedOffLineForm")
 teleLowScore = request.forms.get("teleLowScoreForm")
-teleHighScore = request.forms.get("teleHighScoreForm")
+teleHighScore = request.forms.get("teleHighScoreForm") * 2
 climbBarSpot = request.forms.get("climbBarSpotForm")
+
+database_io = db_interactor()
+database_io.setMatchData(matchNumber, teamNumber, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot)
+currentRecord = database_io.returnTeamMatchData(matchNumber, teamNumber)
+
 %>
 
 <!DOCTYPE HTML>
@@ -30,7 +37,11 @@ climbBarSpot = request.forms.get("climbBarSpotForm")
         Auto High Goal Score: {{ autoHighScore }} <br>
         Teleoperated Low Goal Score: {{ teleLowScore}} <br>
         Teleoperated High Goal Score: {{ teleHighScore }} <br>
-        What bar did they climb to: {{ climbBarSpot }}
+        What bar did they climb to: {{ climbBarSpot }
+    </p>
+    <h3>What was reported in the database</h3>
+    <p>
+        {{ currentRecord }}
     </p>
 </body>
 </html>
