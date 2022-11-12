@@ -3,7 +3,7 @@ from bottle import default_app, route, template
 
 @route('/')
 def menu():
-    return template("pageMenu.html")
+    return template("menu.html")
 
 application = default_app()
 
