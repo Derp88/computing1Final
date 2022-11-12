@@ -1,5 +1,5 @@
 # A very simple Bottle Hello World app for you to get started with...
-from bottle import default_app, route, template
+from bottle import default_app, route, template, post
 
 #Menu
 @route('/')
