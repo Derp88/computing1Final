@@ -7,6 +7,7 @@
 <body>
     <h1>Insert Match Data</h1>
     <form action= "/storeData" method = "post">
+    <!--MATCH NUMBER-->
     <p>
         <label for = "matchNumberForm">Match Number</label>
         <input type = "number"
@@ -15,6 +16,7 @@
         min = "1"
         max = "100" />
     </p>
+    <!--TEAM NUMBER-->
     <p>
         <label for = "teamNumberForm">Team Number</label>
         <input type = "number"
@@ -22,6 +24,92 @@
         name="teamNumberForm"
         min = "1"
         max = "10000" />
+    </p>
+    <!--MOVED FROM START-->
+    <p>
+        <label>Did they move from their starting spot?</label>
+        <!--Button for true-->
+        <label for = "movedOffLineTrue">True</label>
+        <input type = "radio"
+        id ="movedOffLineTrue"
+        name="movedOffLineForm"
+        value = 2 />
+        <!--Button for false-->
+        <label for = "movedOffLineFalse">False</label>
+        <input type = "radio"
+        id ="movedOffLineFalse"
+        name="movedOffLineForm"
+        value = 0 />
+    </p>
+    <!--AUTO LOW GOAL SCORE-->
+    <p>
+        <label for = "autoLowScoreForm">AUTO: Scored in low goal</label>
+        <input type = "number"
+        id ="autoLowScoreForm"
+        name = "autoLowScoreForm"
+        min = "0"
+        max = "100" />
+    </p>
+    <!--AUTO HIGH GOAL SCORE-->
+    <p>
+        <label for = "autoHighScoreForm">AUTO: Scored in high goal</label>
+        <input type = "number"
+        id ="autoHighScoreForm"
+        name = "autoHighScoreForm"
+        min = "0"
+        max = "100" />
+    </p>
+    <!--TELEOP LOW GOAL SCORE-->
+    <p>
+        <label for = "teleLowScoreForm">Teleop: Scored in low goal</label>
+        <input type = "number"
+        id ="teleLowScoreForm"
+        name = "teleLowScoreForm"
+        min = "0"
+        max = "100" />
+    </p>
+    <!--TELEOP HIGH GOAL SCORE-->
+    <p>
+        <label for = "teleHighScoreForm">Teleop: Scored in high goal</label>
+        <input type = "number"
+        id ="teleHighScoreForm"
+        name = "teleHighScoreForm"
+        min = "0"
+        max = "100" />
+    </p>
+    <!--CLIMB BAR POSITION-->
+    <p>
+        <label>What bar did they climb to?</label>
+        <!--Button for no climb-->
+        <label for = "movedOffLineTrue">Didn't</label>
+        <input type = "radio"
+        id ="climbBarSpotNone"
+        name="climbBarSpotForm"
+        value = 0 />
+        <!--Button for low rung-->
+        <label for = "movedOffLineFalse">Low</label>
+        <input type = "radio"
+        id ="climbBarSpotLow"
+        name="climbBarSpotForm"
+        value = 4 />
+        <!--Button for mid rung-->
+        <label for = "movedOffLineFalse">Mid</label>
+        <input type = "radio"
+        id ="climbBarSpotMid"
+        name="climbBarSpotForm"
+        value = 6 />
+        <!--Button for high rung-->
+        <label for = "movedOffLineFalse">High</label>
+        <input type = "radio"
+        id ="climbBarSpotHigh"
+        name="climbBarSpotForm"
+        value = 10 />
+        <!--Button for traversal rung-->
+        <label for = "movedOffLineFalse">Traversal</label>
+        <input type = "radio"
+        id ="climbBarSpotTraversal"
+        name="climbBarSpotForm"
+        value = 15 />
     </p>
     <p>
         <button type = "submit">
