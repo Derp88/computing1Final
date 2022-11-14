@@ -2,7 +2,7 @@
 
 import sqlite3
 #DB Connection
-db = sqlite3.connect("computing1Final/main.db")
+db = sqlite3.connect("computing1Final/main.db") #The file path shouldn't be stated normally, but it is required for python anywhere to work
 
 #Create DB insert class
 class db_interactor(object):
