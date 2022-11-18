@@ -1,0 +1,36 @@
+<%
+from db_interact import db_interactor
+database_io = db_interactor()
+
+#Get valid teams and matches
+matches = database_io.returnMatches()
+teams = database_io.returnTeams()
+%>
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scouting - Individual Match Data</title>
+    </head>
+    <body>
+        <h1>Individual Match Data</h1>
+        <form action = "viewMatchDataIndividualReceived" method = "post">
+            <!--INPUT FOR MATCH-->
+            <select name = "matchNumber">
+                %for match in matches:
+                    <option value = "{{ match }}"></option>
+                %end
+            </select>
+            <!--INPUT FOR TEAM-->
+            <select name = "teamNumber">
+                %for team in teams:
+                    <option value = "{{ teams }}"></option>
+                %end
+            </select>
+
+            <button type = "submit"> Request Data</button>
+
+        </form>
+    </body>
+</html>
