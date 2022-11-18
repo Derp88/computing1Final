@@ -2,7 +2,7 @@
 
 import sqlite3
 #DB Connection
-db = sqlite3.connect("computing1Final/main.db") #The file path shouldn't be stated normally, but it is required for python anywhere to work
+db = sqlite3.connect("computing1Final/main.db") #The file path shouldn't be stated normally, but it is required for python anywhere to work 
 
 #Create DB insert class
 class db_interactor(object):
@@ -59,10 +59,10 @@ class db_interactor(object):
         for unsortedMatch in matchesUnsorted:
             #While doing this we can make the tuple(of one element) into a string
             AddMatch = "".join(str(unsortedMatch))
-            AddMatch = AddMatch[1:][:-2]
+            AddMatch = int(AddMatch[1:][:-2])
             if AddMatch not in matches:
                 matches.append(AddMatch)
-        matches = matches.sort()
+        matches.sort()
         return matches
 
     #Get all teams
@@ -80,16 +80,16 @@ class db_interactor(object):
             #While doing this we can make the tuple(of one element) into a string
             AddTeam = "".join(str(unsortedTeam))
             #Adds team with uneeded parentheses and comma removed
-            AddTeam = AddTeam[1:][:-2]
+            AddTeam = int(AddTeam[1:][:-2])
             if AddTeam not in teams:
                 teams.append(AddTeam)
-        teams = teams.sort()
+        teams.sort()
         return teams
 
 def main():
     database_io = db_interactor()
     #This is to add test data
-    #database_io.setMatchData(1, 292, 1, 1, 3, 5, 0, 2)
+    #database_io.setMatchData(3, 5010, 1, 1, 3, 5, 0, 2)
     #print(database_io.returnTeamMatchData(1,292))
     print(database_io.returnMatches())
     print(database_io.returnTeams())
