@@ -62,6 +62,7 @@ class db_interactor(object):
             AddMatch = AddMatch[1:][:-2]
             if AddMatch not in matches:
                 matches.append(AddMatch)
+        matches = matches.sort()
         return matches
 
     #Get all teams
@@ -82,6 +83,7 @@ class db_interactor(object):
             AddTeam = AddTeam[1:][:-2]
             if AddTeam not in teams:
                 teams.append(AddTeam)
+        teams = teams.sort()
         return teams
 
 def main():
