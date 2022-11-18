@@ -57,9 +57,9 @@ class db_interactor(object):
         cur.close()
         #Remove duplicates
         for unsortedMatch in matchesUnsorted:
-            if unsortedMatch not in matches:
-                #While doing this we can make the tuple(of one element) into a string
-                AddMatch = "".join(str(unsortedMatch))
+            #While doing this we can make the tuple(of one element) into a string
+            AddMatch = "".join(str(unsortedMatch))
+            if AddMatch not in matches:
                 matches.append(AddMatch[1:][:-2])
         return matches
 
@@ -75,9 +75,9 @@ class db_interactor(object):
         cur.close()
         #Remove duplicates
         for unsortedTeam in teamsUnsorted:
-            if unsortedTeam not in teams:
-                #While doing this we can make the tuple(of one element) into a string
-                AddTeam = "".join(str(unsortedTeam))
+            #While doing this we can make the tuple(of one element) into a string
+            AddTeam = "".join(str(unsortedTeam))
+            if AddTeam not in teams:
                 #Adds team with uneeded parentheses and comma removed
                 teams.append(AddTeam[1:][:-2])
         return teams
