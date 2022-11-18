@@ -51,9 +51,14 @@ class db_interactor(object):
         cur = db.cursor()
         #Gets all matches
         matchesRaw = cur.execute("SELECT matchNumber FROM matches")
-        matches = matchesRaw.fetchall()
+        matchesUnsorted = matchesRaw.fetchall()
+        matches = []
         #Close the cursor
         cur.close()
+        #Remove duplicates
+        for unsortedMatch in matchesUnsorted:
+            if unsortedMatch not in matches:
+                matches.append(unsortedMatch)
         return matches
 
     #Get all teams
