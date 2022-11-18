@@ -67,9 +67,16 @@ class db_interactor(object):
         cur = db.cursor()
         #Gets all teams
         teamsRaw = cur.execute("SELECT teamNumber FROM matches")
-        teams = teamsRaw.fetchall()
+        teamsUnsorted = teamsRaw.fetchall()
+        teams = []
         #Close the cursor
         cur.close()
+        #Remove duplicates
+        for unsortedTeam in teamsUnsorted:
+            if unsortedTeam not in teams:
+                #While doing this we can remove unneeded parts from the data
+                AddTeam = unsortedTeam[1:][:-2]
+                teams.append(AddTeam)
         return teams
 
 def main():
