@@ -2,7 +2,7 @@
 
 import sqlite3
 #DB Connection
-db = sqlite3.connect("computing1Final/main.db") #The file path shouldn't be stated normally, but it is required for python anywhere to work
+db = sqlite3.connect("main.db") #The file path shouldn't be stated normally, but it is required for python anywhere to work
 
 #Create DB insert class
 class db_interactor(object):
@@ -58,7 +58,9 @@ class db_interactor(object):
         #Remove duplicates
         for unsortedMatch in matchesUnsorted:
             if unsortedMatch not in matches:
-                matches.append(unsortedMatch)
+                #While doing this we can make the tuple(of one element) into a string
+                AddMatch = "".join(str(unsortedMatch))
+                matches.append(AddMatch[1:][:-2])
         return matches
 
     #Get all teams
@@ -74,9 +76,10 @@ class db_interactor(object):
         #Remove duplicates
         for unsortedTeam in teamsUnsorted:
             if unsortedTeam not in teams:
-                #While doing this we can remove unneeded parts from the data
-                AddTeam = unsortedTeam[1:][:-2]
-                teams.append(AddTeam)
+                #While doing this we can make the tuple(of one element) into a string
+                AddTeam = "".join(str(unsortedTeam))
+                #Adds team with uneeded parentheses and comma removed
+                teams.append(AddTeam[1:][:-2])
         return teams
 
 def main():
