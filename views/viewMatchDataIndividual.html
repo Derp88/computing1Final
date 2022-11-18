@@ -20,13 +20,13 @@ teams = database_io.returnTeams()
             <!--INPUT FOR MATCH-->
             <select name = "matchNumber">
                 %for match in matches:
-                    <option value = "{{ match }}"></option>
+                    <option value = "{{ match }}">{{match}}</option>
                 %end
             </select>
             <!--INPUT FOR TEAM-->
             <select name = "teamNumber">
                 %for team in teams:
-                    <option value = "{{ teams }}"></option>
+                    <option value = "{{ teams }}">{{team}}</option>
                 %end
             </select>
 
