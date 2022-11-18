@@ -59,8 +59,9 @@ class db_interactor(object):
         for unsortedMatch in matchesUnsorted:
             #While doing this we can make the tuple(of one element) into a string
             AddMatch = "".join(str(unsortedMatch))
+            AddMatch = AddMatch[1:][:-2]
             if AddMatch not in matches:
-                matches.append(AddMatch[1:][:-2])
+                matches.append(AddMatch)
         return matches
 
     #Get all teams
@@ -77,9 +78,10 @@ class db_interactor(object):
         for unsortedTeam in teamsUnsorted:
             #While doing this we can make the tuple(of one element) into a string
             AddTeam = "".join(str(unsortedTeam))
+            #Adds team with uneeded parentheses and comma removed
+            AddTeam = AddTeam[1:][:-2]
             if AddTeam not in teams:
-                #Adds team with uneeded parentheses and comma removed
-                teams.append(AddTeam[1:][:-2])
+                teams.append(AddTeam)
         return teams
 
 def main():
