@@ -1,0 +1,46 @@
+<%
+from bottle import request
+from db_interact import db_interactor
+database_io = db_interactor()
+
+matchNumber = request.forms.get("matchNumber")
+teamNumber = request.forms.get("teamNumber")
+
+results = database_io.returnTeamMatchData(matchNumber, teamNumber)
+#Tell user if they robot moved from start
+movedFromStart = "False"
+if results[5] != 0:
+    movedFromStart = "True"
+end
+#Tell user what bar the robot was on
+barSpot = ""
+if results[8] == 0:
+    barSpot = "Didn't Climb"
+elif results[8] == 4:
+    barSpot = "Low Rung"
+elif results[8] == 6:
+    barSpot = "Mid Rung"
+elif results[8] == 10:
+    barSpot = "High Rung"
+elif results[8] == 16:
+    barSpot = "Traversal Rung"
+end
+%>
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scouting - Individual Match Data Results</title>
+    </head>
+    <body>
+        <h1>Results for {{teamNumber}} in match {{matchNumber}}</h1>
+        <p1>
+            Auto Low Score: {{results[3]}} <br>
+            Auto High Score: {{results[4]}} <br>
+            Moved off starting line: {{movedFromStart}} <br>
+            Teleop Low Score: {{results[6]}} <br>
+            Teleop High Score: {{results[7]}} <br>
+            Climb Bar Spot: {{barSpot}} or {{results[8]}} points
+        </p1>
+    </body>
