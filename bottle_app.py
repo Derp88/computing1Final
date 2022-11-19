@@ -26,12 +26,12 @@ def viewDataMenu():
 def viewDataIndividualMatch():
     return template("viewData/individualMatch.html")
 
-@post('viewData/individualMatchChoose')
+@post('/viewData/individualMatchChoose')
 def viewDataIndividualMatchChoose():
     return template("viewData/individualMatchChoose.html")
 
 #Page to display indivdual match data of one team
-@post('viewData/individualMatchReceived')
+@post('/viewData/individualMatchReceived')
 def viewDataIndividualMatchReceived():
     return template("viewData/individualMatchReceived.html")
 
