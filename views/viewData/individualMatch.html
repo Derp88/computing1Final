@@ -2,8 +2,7 @@
 from db_interact import db_interactor
 database_io = db_interactor()
 
-#Get valid teams and matches
-matches = database_io.returnMatches()
+#Get valid teams
 teams = database_io.returnTeams()
 %>
 
@@ -15,21 +14,15 @@ teams = database_io.returnTeams()
     </head>
     <body>
         <h1>Individual Match Data</h1>
-        <form action = "viewMatchDataIndividualReceived" method = "post">
-            <!--INPUT FOR MATCH-->
-            <select name = "matchNumber">
-                %for match in matches:
-                    <option value = "{{ match }}">{{match}}</option>
-                %end
-            </select>
+        <form action = "individualMatchChoose" method = "post">
             <!--INPUT FOR TEAM-->
             <select name = "teamNumber">
                 %for team in teams:
                     <option value = "{{ teams }}">{{team}}</option>
                 %end
             </select>
-
-            <button type = "submit"> Request Data</button>
+            
+            <button type = "submit"> Next Page</button>
 
         </form>
     </body>

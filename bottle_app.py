@@ -21,10 +21,14 @@ def storeData():
 def viewDataMenu():
     return template("viewData/menu.html")
 
-#Page to get match number and team number for the display
+#Page to get team number for the display
 @route('/viewData/individualMatch')
 def viewDataIndividualMatch():
     return template("viewData/individualMatch.html")
+
+@post('viewData/individualMatchChoose')
+def viewDataIndividualMatchChoose():
+    return template("viewData/individualMatchChoose.html")
 
 #Page to display indivdual match data of one team
 @post('viewData/individualMatchReceived')

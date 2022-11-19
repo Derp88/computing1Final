@@ -33,6 +33,19 @@ class db_interactor(object):
         #Return the match results
         return matchResults
 
+    #Gets all data for a team
+    def returnTeamData(self, teamNumber):
+        #Create the cursor
+        cur = db.cursor()
+        #View match results
+        matchResultsRaw = cur.execute("SELECT * FROM matches WHERE teamNumber = ?", (teamNumber,))
+        matchResults = matchResultsRaw.fetchall()
+
+        #Close the cursor
+        cur.close()
+        #Return the match results
+        return matchResults
+
     #Get all match data
     def returnAllData(self):
         #Create the cursor
@@ -89,11 +102,11 @@ class db_interactor(object):
 def main():
     database_io = db_interactor()
     #This is to add test data
-    #database_io.setMatchData(3, 5010, 1, 1, 3, 5, 0, 2)
+    #database_io.setMatchData(8, 292, 3, 3, 7, 8, 4, 2)
     #print(database_io.returnTeamMatchData(1,292))
-    print(database_io.returnMatches())
-    print(database_io.returnTeams())
-
+    #print(database_io.returnTeamData(292))
+    teamInfo = database_io.returnTeamData(292)
+    
 
 if __name__ == "__main__":
     main()
