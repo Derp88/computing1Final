@@ -105,7 +105,8 @@ def main():
     #database_io.setMatchData(8, 292, 3, 3, 7, 8, 4, 2)
     #print(database_io.returnTeamMatchData(1,292))
     #print(database_io.returnTeamData(292))
-    teamInfo = database_io.returnTeamData(292)
+    print(database_io.returnTeams())
+    
     
 
 if __name__ == "__main__":

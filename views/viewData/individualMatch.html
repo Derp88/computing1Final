@@ -18,7 +18,7 @@ teams = database_io.returnTeams()
             <!--INPUT FOR TEAM-->
             <select name = "teamNumber">
                 %for team in teams:
-                    <option value = "{{ teams }}">{{team}}</option>
+                    <option value = {{ teams }}>{{team}}</option>
                 %end
             </select>
             
