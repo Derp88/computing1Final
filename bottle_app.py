@@ -17,19 +17,19 @@ def storeData():
     return template("storeData.html")
 
 #Page that shows links to all possible ways to view match data
-@route('/viewMatchMenu')
-def viewmatchMenu():
-    return template("viewMatchMenu.html")
+@route('/viewData')
+def viewDataMenu():
+    return template("viewData/menu.html")
 
 #Page to get match number and team number for the display
-@route('/viewMatchDataIndividual')
-def viewMatchDataIndividual():
-    return template("viewMatchDataIndividual.html")
+@route('/viewData/individualMatch')
+def viewDataIndividualMatch():
+    return template("viewData/individualMatch.html")
 
 #Page to display indivdual match data of one team
-@post('viewMatchDataIndividualReceived')
-def viewMatchDataIndividualReceived():
-    return template("viewMatchDataIndividualReceived.html")
+@post('viewData/individualMatchReceived')
+def viewDataIndividualMatchReceived():
+    return template("viewData/individualMatchReceived.html")
 
 application = default_app()
 
