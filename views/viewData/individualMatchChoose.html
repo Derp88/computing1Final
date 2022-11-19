@@ -14,13 +14,13 @@ teamInfo = database_io.returnTeamData(teamNumber)
         <title>Scouting - Individual Match Data</title>
     </head>
     <body>
-        <h1>Select Match</h1>
-        <!--INPUT FOR MATCH-->
+        <h1>Select Match. DEBUG {{teamInfo}}</h1>
         <form action = "individualMatchReceived" method = "post">
+            <!--INPUT FOR MATCH-->
             <select name = "matchNumber">
-            %for entry in teamInfo:
-                <option value = "{{ entry[1] }}">{{entry[1]}}</option>
-            %end
+                %for entry in teamInfo:
+                    <option value = "{{ entry[1] }}">{{entry[1]}}</option>
+                %end
             </select>
 
             <input type="hidden" name="teamNumber" value="{{teamNumber}}"/>
