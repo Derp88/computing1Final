@@ -1,7 +1,22 @@
+<%
+from bottle import request
+from db_interact import db_interactor
+database_io = db_interactor()
+
+matchNumber = request.forms.get("matchNumber")
+results = database_io.returnMatchData(matchNumber)
+
+%>
+
 <!DOCTYPE HTML>
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
         <title>Scouting - Match Data</title>
     </head>
+    <body>
+        <p1>
+            {{results}}
+        </p1>
+    </body>
 </html>

@@ -46,6 +46,19 @@ class db_interactor(object):
         #Return the match results
         return matchResults
 
+    #Gets all data for a match
+    def returnMatchData(self, matchNumber):
+        #Create the cursor
+        cur = db.cursor()
+        #View match results
+        matchResultsRaw = cur.execute("SELECT * FROM matches WHERE matchNumber = ?", (matchNumber,))
+        matchResults = matchResultsRaw.fetchall()
+
+        #Close the cursor
+        cur.close()
+        #Return the match results
+        return matchResults
+
     #Get all match data
     def returnAllData(self):
         #Create the cursor
