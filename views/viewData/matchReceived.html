@@ -6,6 +6,13 @@ database_io = db_interactor()
 matchNumber = request.forms.get("matchNumber")
 results = database_io.returnMatchData(matchNumber)
 
+team0 = results[0]
+team1 = results[1]
+team2 = results[2]
+team3 = results[3]
+team4 = results[4]
+team5 = results[5]
+
 %>
 
 <!DOCTYPE HTML>
@@ -16,7 +23,12 @@ results = database_io.returnMatchData(matchNumber)
     </head>
     <body>
         <p1>
-            {{results}}
+            Team: {{team0[2]}} Data: {{team0}}<br>
+            Team: {{team1[2]}} Data: {{team1}}<br>
+            Team: {{team2[2]}} Data: {{team2}}<br>
+            Team: {{team3[2]}} Data: {{team3}}<br>
+            Team: {{team4[2]}} Data: {{team4}}<br>
+            Team: {{team5[2]}} Data: {{team5}}<br>
         </p1>
     </body>
 </html>
