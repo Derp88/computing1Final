@@ -37,13 +37,13 @@ def viewDataIndividualMatchReceived():
     return template("viewData/individualMatchReceived.html")
 
 #Page to select match number, to show stats of all teams in match
-@post('/viewData/match')
+@route('/viewData/match')
 def viewDataMatch():
     return template("viewData/match.html")
 #Gets the match data
 @post('/viewData/matchReceived')
 def viewDataMatchReceived():
     return template("viewData/matchReceived.html")
-    
+
 application = default_app()
 
