@@ -20,6 +20,7 @@ matches = database_io.returnMatches()
             <select name = "matchNumber" required>
                 %for match in matches:
                     <option value = " {{match}} ">{{match}}</option>
+                %end
             </select>
             <button type = "submit">View Match</button>
         </form>
