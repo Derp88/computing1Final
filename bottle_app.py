@@ -26,6 +26,7 @@ def viewDataMenu():
 def viewDataIndividualMatch():
     return template("viewData/individualMatch.html")
 
+#Page where the match number is selected
 @post('/viewData/individualMatchChoose')
 def viewDataIndividualMatchChoose():
     return template("viewData/individualMatchChoose.html")
@@ -35,5 +36,14 @@ def viewDataIndividualMatchChoose():
 def viewDataIndividualMatchReceived():
     return template("viewData/individualMatchReceived.html")
 
+#Page to select match number, to show stats of all teams in match
+@post('/viewData/match')
+def viewDataMatch():
+    return template("viewData/match.html")
+#Gets the match data
+@post('/viewData/matchReceived')
+def viewDataMatchReceived():
+    return template("viewData/matchReceived.html")
+    
 application = default_app()
 

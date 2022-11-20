@@ -16,13 +16,13 @@ teams = database_io.returnTeams()
         <h1>Individual Match Data</h1>
         <form action = "individualMatchChoose" method = "post">
             <!--INPUT FOR TEAM-->
-            <select name = "teamNumber">
+            <select name = "teamNumber" required>
                 %for team in teams:
                     <option value = "{{ team }}">{{team}}</option>
                 %end
             </select>
             
-            <button type = "submit"> Next Page</button>
+            <button type = "submit">Next Page</button>
 
         </form>
     </body>

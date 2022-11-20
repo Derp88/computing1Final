@@ -1,0 +1,27 @@
+<%
+#Gets all valid matches the user can select from
+
+from db_interact import db_interactor
+database_io = db_interactor()
+
+matches = database_io.returnMatches()
+%>
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scouting - Match Data</title>
+    </head>
+    <body>
+        <h1>Select Match</h1>
+        <form action = "matchReceived" method = "post">
+            <!--INPUT FOR MATCH-->
+            <select name = "matchNumber" required>
+                %for match in matches:
+                    <option value = " {{match}} ">{{match}}</option>
+            </select>
+            <button type = "submit">View Match</button>
+        </form>
+    </body>
+</html>
