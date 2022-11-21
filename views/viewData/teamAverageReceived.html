@@ -19,12 +19,12 @@ climbBarSpot = 0 #An average just for this isn't super useful. Will also get a s
 #Gets total score
 for match in results:
     runs = runs + 1
-    autoLowScore = match[3]
-    autoHighScore = match[4]
-    movedOffLine = match[5]
-    teleLowScore = match[6]
-    teleHighScore = match[7]
-    climbBarSpot = match[8]
+    autoLowScore = autoLowScore + match[3]
+    autoHighScore = autoHighScore + match[4]
+    movedOffLine = movedOffLine + match[5]
+    teleLowScore = teleLowScore + match[6]
+    teleHighScore = teleHighScore + match[7]
+    climbBarSpot = climbBarSpot + match[8]
 end
 #Turns totals into averages
 autoLowScore = autoLowScore/runs
