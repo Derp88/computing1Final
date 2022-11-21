@@ -1,0 +1,23 @@
+<%
+from bottle import request
+from db_interact import db_interactor
+database_io = db_interactor()
+
+teamNumber = request.forms.get("teamNumber")
+
+results = database_io.returnTeamData(teamNumber)
+
+%>
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scouting - Team Matches Data</title>
+    </head>
+    <body>
+        %for match in results:
+            Match {{match[0]}}: {{match}} <br>
+        %end
+    </body>
+</html>
