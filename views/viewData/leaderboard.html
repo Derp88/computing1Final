@@ -4,14 +4,16 @@ database_io = db_interactor()
 
 results = database_io.returnAllData()
 totalScore = 0
+resultsWithTotal = []
 
 for record in results:
+    recordWithTotal = list(record)
     totalScore = record[2] + record[3] + record[4] + record[5] + record[6] + record[7] + record[8] #Adds all points together
-    record.append(totalScore)
-
+    recordWithTotal.append(totalScore)
+    resultsWithTotal.append(recordWithTotal)
 end
 
-sortedResults = sorted(results, key = lambda x: int(x[9]))
+sortedResults = sorted(resultsWithTotal, key = lambda x: int(x[9]))
 
 %>
 <!DOCTYPE HTML>
