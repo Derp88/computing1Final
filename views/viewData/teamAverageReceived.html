@@ -1,0 +1,55 @@
+<%
+from db_interact import db_interactor
+database_io = db_interactor()
+
+teamNumber = request.forms.get("teamNumber")
+
+results = database_io.returnTeamData(teamNumber)
+
+runs = 0
+
+autoLowScore = 0
+autoHighScore = 0
+movedOffLine = 0
+teleLowScore = 0
+teleHighScore = 0
+climbBarSpot = 0 #An average just for this isn't super useful. Will also get a string represenation for that.
+
+#Gets total score
+for match in results:
+    runs = runs + 1
+    autoLowScore = match[2]
+    autoHighScore = match[3]
+    movedOffLine = match[4]
+    teleLowScore = match[5]
+    teleHighScore = match[6]
+    climbBarSpot = match[7]
+end
+#Turns totals into averages
+autoLowScore = autoLowScore/runs
+autoHighScore = autoHighScore/runs
+movedOffLine = movedOffLine/runs
+teleLowScore = teleLowScore/runs
+teleHighScore = teleHighScore/runs
+climbBarSpot = climbBarSpot/runs
+%>
+
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scouting - Average Team Data</title>
+    </head>
+    <body>
+        <h1> {{teamNumber}} Average Stats</h1>
+        <p1>
+            Auto Low Score: {{autoLowScore}} <br>
+            Auto High Score: {{autoHighScore}} <br>
+            Moved off starting line: {{movedOffLine}} <br>
+            Teleop Low Score: {{teleLowScore}} <br>
+            Teleop High Score: {{teleHighScore}} <br>
+            Climb Bar Spot: {{climbBarSpot}}
+        </p1>
+    </body>
+</html>
