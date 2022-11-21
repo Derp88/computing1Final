@@ -13,7 +13,7 @@ for record in results:
     resultsWithTotal.append(recordWithTotal)
 end
 
-sortedResults = sorted(resultsWithTotal, key = lambda x: int(x[9]))
+sortedResults = sorted(resultsWithTotal, key = lambda x: int(x[9]), reverse=True)
 
 %>
 <!DOCTYPE HTML>
