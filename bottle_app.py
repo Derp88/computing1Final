@@ -64,5 +64,10 @@ def viewDataTeamMatches():
 def viewDataTeamMatches():
     return template("viewData/teamMatchesReceived.html")
 
+#Leaderboard of all teams individual performances
+@route('/viewData/leaderboard')
+def leaderboard():
+    return template("viewData/leaderboard.html")
+
 application = default_app()
 

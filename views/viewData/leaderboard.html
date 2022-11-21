@@ -1,0 +1,28 @@
+<%
+from db_interact import db_interactor
+database_io = db_interactor()
+
+results = database_io.returnAllData()
+totalScore = 0
+
+for record in results:
+    totalScore = record[2] + record[3] + record[4] + record[5] + record[6] + record[7] + record[8] #Adds all points together
+    record.append(totalScore)
+
+end
+
+sortedResults = sorted(results, key = lambda x: int(x[9]))
+
+%>
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scouting - Leaderboard</title>
+    </head>
+    <body>
+        %for record in sortedResults:
+            {{record}}
+        %end
+    </body>
+</html>
