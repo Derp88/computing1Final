@@ -8,7 +8,7 @@ resultsWithTotal = []
 
 for record in results:
     recordWithTotal = list(record)
-    totalScore = record[2] + record[3] + record[4] + record[5] + record[6] + record[7] + record[8] #Adds all points together
+    totalScore = record[3] + record[4] + record[5] + record[6] + record[7] + record[8] #Adds all points together
     recordWithTotal.append(totalScore)
     resultsWithTotal.append(recordWithTotal)
 end
@@ -24,7 +24,7 @@ sortedResults = sorted(resultsWithTotal, key = lambda x: int(x[9]))
     </head>
     <body>
         %for record in sortedResults:
-            {{record}}
+            {{record}}<br>
         %end
     </body>
 </html>
