@@ -7,9 +7,12 @@ totalScore = 0
 resultsWithTotal = []
 
 for record in results:
+    #Creates a list with the content of the original record tuple
     recordWithTotal = list(record)
     totalScore = record[3] + record[4] + record[5] + record[6] + record[7] + record[8] #Adds all points together
+    #Adds total score to the new list
     recordWithTotal.append(totalScore)
+    #Adds list to new list that contains records with totals
     resultsWithTotal.append(recordWithTotal)
 end
 
@@ -23,6 +26,7 @@ sortedResults = sorted(resultsWithTotal, key = lambda x: int(x[9]), reverse=True
         <title>Scouting - Leaderboard</title>
     </head>
     <body>
+        <h1>Leaderboard</h1>
         %for record in sortedResults:
             {{record}}<br>
         %end
