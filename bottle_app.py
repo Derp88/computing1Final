@@ -52,7 +52,7 @@ def viewDataTeamAverage():
 #Gets avg data
 @post('/viewData/teamAverageReceived')
 def viewDataTeamAverageReceived():
-    return template("/viewData/teamAverageReceived.html")
+    return template("viewData/teamAverageReceived.html")
 
 application = default_app()
 
