@@ -45,5 +45,14 @@ def viewDataMatch():
 def viewDataMatchReceived():
     return template("viewData/matchReceived.html")
 
+#Page to select team number, to show avg stats of team
+@route('/viewData/teamAverage')
+def viewDataTeamAverage():
+    return template("viewData/teamAverage.html")
+#Gets avg data
+@post('/viewData/teamAverageReceived')
+def viewDataTeamAverageReceived():
+    return template("/viewData/teamAverageReceived.html")
+
 application = default_app()
 
