@@ -24,7 +24,8 @@ allRecords = database_io.returnAllData()
                 <th>Tele Low</th>
                 <th>Tele High</th>
                 <th>Climb Spot</th>
-                <th>Modify</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
             %for match in allRecords:
             <tr>
@@ -39,7 +40,13 @@ allRecords = database_io.returnAllData()
                 <td>{{match[8]}}</td>
                 <td>
                     <form action = "storeEditDelete" method = "post">
-                        <input type = "hidden" name = "matchID" value = {{match[0]}} />
+                        <input type = "hidden" name = "matchIDEdit" value = {{match[0]}} />
+                        <button type = "submit">Modify</button>
+                    </form>
+                </td>
+                <td>
+                    <form action = "storeEditDelete" method = "post">
+                        <input type = "hidden" name = "matchIDDelete" value = {{match[0]}} />
                         <button type = "submit">Modify</button>
                     </form>
                 </td>
