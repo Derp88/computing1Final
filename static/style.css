@@ -1,3 +1,6 @@
 body{
-    background-color:silver
+    background-color:silver;
+}
+td{
+    text-align: center;
 }
