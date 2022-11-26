@@ -59,7 +59,7 @@ class db_interactor(object):
         #Return the match results
         return matchResults
 
-    #Get all match data
+    #Get all data
     def returnAllData(self):
         #Create the cursor
         cur = db.cursor()
@@ -112,13 +112,34 @@ class db_interactor(object):
         teams.sort()
         return teams
 
+    #Delete a record
+    def deleteRecord(self, ID):
+        #Create the cursor
+        cur = db.cursor()
+        #Deletes record
+        cur.execute("DELETE FROM matches WHERE ID = ?", (ID,))
+        db.commit()
+        #Close the cursor
+        cur.close()
+
+    #Update a record
+    def updateRecord(self, ID, matchNumber, teamNumber, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot):
+        #We shouldn't have to do any checks to make sure the ID is valid, because the user can't select one out of range
+        #Create the cursor
+        cur = db.cursor()
+        #Update data
+        cur.execute("UPDATE matches SET matchNumber = ?, teamNumber = ?, autoLowScore = ?, autoHighScore = ?, movedOffLine = ?, teleLowScore = ?, teleHighScore = ?, climbBarSpot = ? WHERE id = ?", 
+        (matchNumber, teamNumber, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot, ID))
+        db.commit()
+        #Close the cursor
+        cur.close()
+
 def main():
     database_io = db_interactor()
     #This is to add test data
     #database_io.setMatchData(8, 292, 3, 3, 7, 8, 4, 2)
     #print(database_io.returnTeamMatchData(1,292))
-    results = database_io.returnTeamMatchData(1,292)
-    print(results[5])
+    
     
     
     
