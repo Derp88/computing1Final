@@ -1,0 +1,49 @@
+<%
+#Get all DB data
+from db_interact import db_interactor
+allRecords = database_io.returnAllData()
+%>
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scouting - Edit or Delete Data</title>
+        <link rel = "stylesheet" type = "text/css" href = "/static/style.css"/>
+    </head>
+    <body>
+        <h1>Edit and Delete Matches</h1>
+        <table>
+            <tr>
+                <th>ID Key</th>
+                <th>Match</th>
+                <th>Team</th>
+                <th>Auto Low</th>
+                <th>Auto High</th>
+                <th>Off Line</th>
+                <th>Tele Low</th>
+                <th>Tele High</th>
+                <th>Climb Spot</th>
+                <th>Modify</th>
+            </tr>
+            %for match in allRecords:
+            <tr>
+                <td>{{match[0]}}</td>
+                <td>{{match[1]}}</td>
+                <td>{{match[2]}}</td>
+                <td>{{match[3]}}</td>
+                <td>{{match[4]}}</td>
+                <td>{{match[5]}}</td>
+                <td>{{match[6]}}</td>
+                <td>{{match[7]}}</td>
+                <td>{{match[8]}}</td>
+                <td>
+                    <form action = "storeEditDelete" method = "post">
+                        <input type = "hidden" name = "matchID" value = {{match[0]}} />
+                        <button type = "submit">Modify</button>
+                    </form>
+                </td>
+            </tr>
+            %end
+        </table>
+    </body>
+</html>

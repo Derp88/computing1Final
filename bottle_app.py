@@ -69,5 +69,10 @@ def viewDataTeamMatches():
 def leaderboard():
     return template("viewData/leaderboard.html")
 
+#Page to edit or delete DB data
+@route('/editDelete')
+def editDelete():
+    return template("editDelete.html")
+
 application = default_app()
 
