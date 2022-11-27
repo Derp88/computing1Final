@@ -17,6 +17,8 @@ oldRecord = database_io.returnIdData(idToEdit)
     <body>
         <h1>Input New Data</h1>
         <form action = "storeEditDelete" method = "post">
+                <input type = "hidden" name = "matchIDEdit" value = {{idToEdit}} />
+
                 <label for = "matchNumberForm">Match</label>
                 <input type = "number"
                 id ="matchNumberForm"
