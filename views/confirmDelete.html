@@ -4,6 +4,8 @@ from db_interact import db_interactor
 database_io = db_interactor()
 
 idToDelete = request.forms.get("matchIDDelete")
+dataOfID = request.forms.get("dataOfID")
+
 
 %>
 
@@ -16,5 +18,23 @@ idToDelete = request.forms.get("matchIDDelete")
     </head>
     <body>
         <h1>Confirm Data Deletion</h1>
+        <p1>
+            ID: {{dataOfID[0]}}<br>
+            Match: {{dataOfID[1]}}<br>
+            Team: {{dataOfID[2]}}<br>
+            Auto Low: {{dataOfID[3]}}<br>
+            Auto High: {{dataOfID[4]}}<br>
+            Off Line: {{dataOfID[5]}}<br>
+            Tele Low: {{dataOfID[6]}}<br>
+            Tele High: {{dataOfID[7]}}<br>
+            Climb Bar: {{dataOfID[8]}}<br>
+        </p1>
+        <form action = "storeEditDelete" method = "post">
+            <input type = "hidden" name = "matchIDDelete" value = {{idToDelete}} />
+            <button type = "submit">Delete</button>
+        </form>
+        <form action = "editDelete">
+            <button type = "submit">Cancel</button>
+        </form>
     </body>
 </html>

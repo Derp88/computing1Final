@@ -80,6 +80,9 @@ def inputEdit():
     return template("inputEdit.html")
 
 #Page to confirm deletion
+@post('/confirmDelete')
+def confirmDelete():
+    return template("confirmDelete.html")
 
 #Page that sends the deletion or changed data to DB
 @post('/storeEditDelete')
