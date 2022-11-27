@@ -1,0 +1,28 @@
+<%
+from bottle import request
+from db_interact import db_interactor
+database_io = db_interactor()
+
+idToDelete = request.forms.get("matchIDDelete")
+idToEdit = request.forms.get("matchIDEdit")
+
+%>
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scouting - Confirmation</title>
+        <link rel = "stylesheet" type = "text/css" href = "/static/style.css"/>
+    </head>
+    <body>
+        %if idToDelete != None: #This is for if we are deleting
+            %database_io.deleteRecord(idToDelete)
+            <h1>Data Deletion Successful</h1>
+            <p1>Data with ID {{idToDelete}} was deleted</p1>
+        %end
+    </body>
+    <form action = "editDelete">
+        <button type = "submit">Home</button>
+    </form>
+</html>

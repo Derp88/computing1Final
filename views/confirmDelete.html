@@ -6,7 +6,6 @@ database_io = db_interactor()
 idToDelete = request.forms.get("matchIDDelete")
 dataOfID = database_io.returnIdData(idToDelete)
 
-
 %>
 
 <!DOCTYPE HTML>
@@ -18,7 +17,6 @@ dataOfID = database_io.returnIdData(idToDelete)
     </head>
     <body>
         <h1>Confirm Data Deletion</h1>
-        <h2>DEBUG RAW DATA - {{dataOfID}}</h2>
         <p1>
             ID: {{dataOfID[0]}}<br>
             Match: {{dataOfID[1]}}<br>
