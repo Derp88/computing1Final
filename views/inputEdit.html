@@ -16,10 +16,8 @@ oldRecord = database_io.returnIdData(idToEdit)
     </head>
     <body>
         <h1>Input New Data</h1>
-        <h2>DEBUG: {{oldRecord}}</h2>
         <form action = "storeEditDelete" method = "post">
-            <p>
-                <label for = "matchNumberForm">Match Number</label>
+                <label for = "matchNumberForm">Match</label>
                 <input type = "number"
                 id ="matchNumberForm"
                 name = "matchNumberForm"
@@ -27,10 +25,8 @@ oldRecord = database_io.returnIdData(idToEdit)
                 max = "100" 
                 value = "{{oldRecord[1]}}"
                 required/>
-            </p>
             <!--TEAM NUMBER-->
-            <p>
-                <label for = "teamNumberForm">Team Number</label>
+                <label for = "teamNumberForm">Team</label>
                 <input type = "number"
                 id ="teamNumberForm"
                 name="teamNumberForm"
@@ -38,28 +34,18 @@ oldRecord = database_io.returnIdData(idToEdit)
                 max = "10000" 
                 value = "{{oldRecord[2]}}"
                 required/>
-            </p>
             <!--MOVED FROM START-->
-            <p>
-                <label>Did they move from their starting spot?</label>
-                <!--Button for true-->
-                <label for = "movedOffLineTrue">True</label>
-                <input type = "radio"
-                id ="movedOffLineTrue"
-                name="movedOffLineForm"
-                value = 2 
+                <label for = "movedOffLineForm">Off Line</label>
+                <input type = "number"
+                id ="movedOffLineForm"
+                name = "movedOffLineForm"
+                min = "0"
+                max = "2" 
+                value = "{{oldRecord[3]}}"
                 required/>
-                <!--Button for false-->
-                <label for = "movedOffLineFalse">False</label>
-                <input type = "radio"
-                id ="movedOffLineFalse"
-                name="movedOffLineForm"
-                value = 0 
-                required/>
-            </p>
+            
             <!--AUTO LOW GOAL SCORE-->
-            <p>
-                <label for = "autoLowScoreForm">AUTO: Scored in low goal</label>
+                <label for = "autoLowScoreForm">Auto Low</label>
                 <input type = "number"
                 id ="autoLowScoreForm"
                 name = "autoLowScoreForm"
@@ -67,11 +53,8 @@ oldRecord = database_io.returnIdData(idToEdit)
                 max = "100" 
                 value = "{{oldRecord[4]}}"
                 required/>
-                
-            </p>
             <!--AUTO HIGH GOAL SCORE-->
-            <p>
-                <label for = "autoHighScoreForm">AUTO: Scored in high goal</label>
+                <label for = "autoHighScoreForm">Auto High</label>
                 <input type = "number"
                 id ="autoHighScoreForm"
                 name = "autoHighScoreForm"
@@ -79,10 +62,8 @@ oldRecord = database_io.returnIdData(idToEdit)
                 max = "100" 
                 value = "{{oldRecord[5]}}"
                 required/>
-            </p>
             <!--TELEOP LOW GOAL SCORE-->
-            <p>
-                <label for = "teleLowScoreForm">Teleop: Scored in low goal</label>
+                <label for = "teleLowScoreForm">Tele Low</label>
                 <input type = "number"
                 id ="teleLowScoreForm"
                 name = "teleLowScoreForm"
@@ -90,10 +71,8 @@ oldRecord = database_io.returnIdData(idToEdit)
                 max = "100" 
                 value = "{{oldRecord[6]}}""
                 required/>
-            </p>
             <!--TELEOP HIGH GOAL SCORE-->
-            <p>
-                <label for = "teleHighScoreForm">Teleop: Scored in high goal</label>
+                <label for = "teleHighScoreForm">Tele High</label>
                 <input type = "number"
                 id ="teleHighScoreForm"
                 name = "teleHighScoreForm"
@@ -101,51 +80,18 @@ oldRecord = database_io.returnIdData(idToEdit)
                 max = "100" 
                 value = "{{oldRecord[7]}}"
                 required/>
-            </p>
             <!--CLIMB BAR POSITION-->
-            <p>
-                <label>What bar did they climb to?</label>
-                <!--Button for no climb-->
-                <label for = "climbBarSpotNone">Didn't</label>
-                <input type = "radio"
-                id ="climbBarSpotNone"
-                name="climbBarSpotForm"
-                value = 0 
+                <label for = "climbBarSpotForm">Climb Spot</label>
+                <input type = "number"
+                id ="climbBarSpotForm"
+                name = "climbBarSpotForm"
+                min = "0"
+                max = "15" 
+                value = "{{oldRecord[8]}}"
                 required/>
-                <!--Button for low rung-->
-                <label for = "climbBarSpotLow">Low</label>
-                <input type = "radio"
-                id ="climbBarSpotLow"
-                name="climbBarSpotForm"
-                value = 4 
-                required/>
-                <!--Button for mid rung-->
-                <label for = "climbBarSpotMid">Mid</label>
-                <input type = "radio"
-                id ="climbBarSpotMid"
-                name="climbBarSpotForm"
-                value = 6 
-                required/>
-                <!--Button for high rung-->
-                <label for = "climbBarSpotHigh">High</label>
-                <input type = "radio"
-                id ="climbBarSpotHigh"
-                name="climbBarSpotForm"
-                value = 10 
-                required/>
-                <!--Button for traversal rung-->
-                <label for = "climbBarSpotTraversal">Traversal</label>
-                <input type = "radio"
-                id ="climbBarSpotTraversal"
-                name="climbBarSpotForm"
-                value = 15 
-                required/>
-            </p>
-            <p>
                 <button type = "submit">
                 Submit Match
                 </button>
-            </p>
         </form>
     </body>
 </html>
