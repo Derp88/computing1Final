@@ -1,0 +1,20 @@
+<%
+from bottle import request
+
+idToEdit = request.forms.get("matchIDEdit")
+idToDelete = request.forms.get("matchIDDelete")
+
+%>
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scouting - Edit or Delete Data - Input</title>
+        <link rel = "stylesheet" type = "text/css" href = "/static/style.css"/>
+    </head>
+    <body>
+        <h1>ID TO EDIT IS {{idToEdit}}</h1>
+        <h2>ID TO DELETE IS {{idToDelete}}</h2>
+    </body>
+</html>
