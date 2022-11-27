@@ -4,7 +4,7 @@ from db_interact import db_interactor
 database_io = db_interactor()
 
 idToEdit = request.forms.get("matchIDEdit")
-
+oldRecord = database_io.returnIdData(idToEdit)
 %>
 
 <!DOCTYPE HTML>
@@ -16,5 +16,135 @@ idToEdit = request.forms.get("matchIDEdit")
     </head>
     <body>
         <h1>Input New Data</h1>
+        <form action = "storeEditDelete" method = "post">
+            <p>
+                <label for = "matchNumberForm">Match Number</label>
+                <input type = "number"
+                id ="matchNumberForm"
+                name = "matchNumberForm"
+                min = "1"
+                max = "100" 
+                required/>
+                value = oldRecord[1]
+            </p>
+            <!--TEAM NUMBER-->
+            <p>
+                <label for = "teamNumberForm">Team Number</label>
+                <input type = "number"
+                id ="teamNumberForm"
+                name="teamNumberForm"
+                min = "1"
+                max = "10000" 
+                required/>
+                value = oldRecord[2]
+            </p>
+            <!--MOVED FROM START-->
+            <p>
+                <label>Did they move from their starting spot?</label>
+                <!--Button for true-->
+                <label for = "movedOffLineTrue">True</label>
+                <input type = "radio"
+                id ="movedOffLineTrue"
+                name="movedOffLineForm"
+                value = 2 
+                required/>
+                <!--Button for false-->
+                <label for = "movedOffLineFalse">False</label>
+                <input type = "radio"
+                id ="movedOffLineFalse"
+                name="movedOffLineForm"
+                value = 0 
+                required/>
+            </p>
+            <!--AUTO LOW GOAL SCORE-->
+            <p>
+                <label for = "autoLowScoreForm">AUTO: Scored in low goal</label>
+                <input type = "number"
+                id ="autoLowScoreForm"
+                name = "autoLowScoreForm"
+                min = "0"
+                max = "100" 
+                required
+                value = oldRecord[4]/>
+                
+            </p>
+            <!--AUTO HIGH GOAL SCORE-->
+            <p>
+                <label for = "autoHighScoreForm">AUTO: Scored in high goal</label>
+                <input type = "number"
+                id ="autoHighScoreForm"
+                name = "autoHighScoreForm"
+                min = "0"
+                max = "100" 
+                required
+                value = oldRecord[5]/>
+            </p>
+            <!--TELEOP LOW GOAL SCORE-->
+            <p>
+                <label for = "teleLowScoreForm">Teleop: Scored in low goal</label>
+                <input type = "number"
+                id ="teleLowScoreForm"
+                name = "teleLowScoreForm"
+                min = "0"
+                max = "100" 
+                required
+                value = oldRecord[6]/>
+            </p>
+            <!--TELEOP HIGH GOAL SCORE-->
+            <p>
+                <label for = "teleHighScoreForm">Teleop: Scored in high goal</label>
+                <input type = "number"
+                id ="teleHighScoreForm"
+                name = "teleHighScoreForm"
+                min = "0"
+                max = "100" 
+                required
+                value = oldRecord[7]/>
+            </p>
+            <!--CLIMB BAR POSITION-->
+            <p>
+                <label>What bar did they climb to?</label>
+                <!--Button for no climb-->
+                <label for = "climbBarSpotNone">Didn't</label>
+                <input type = "radio"
+                id ="climbBarSpotNone"
+                name="climbBarSpotForm"
+                value = 0 
+                required/>
+                <!--Button for low rung-->
+                <label for = "climbBarSpotLow">Low</label>
+                <input type = "radio"
+                id ="climbBarSpotLow"
+                name="climbBarSpotForm"
+                value = 4 
+                required/>
+                <!--Button for mid rung-->
+                <label for = "climbBarSpotMid">Mid</label>
+                <input type = "radio"
+                id ="climbBarSpotMid"
+                name="climbBarSpotForm"
+                value = 6 
+                required/>
+                <!--Button for high rung-->
+                <label for = "climbBarSpotHigh">High</label>
+                <input type = "radio"
+                id ="climbBarSpotHigh"
+                name="climbBarSpotForm"
+                value = 10 
+                required/>
+                <!--Button for traversal rung-->
+                <label for = "climbBarSpotTraversal">Traversal</label>
+                <input type = "radio"
+                id ="climbBarSpotTraversal"
+                name="climbBarSpotForm"
+                value = 15 
+                required/>
+            </p>
+            <p>
+                <button type = "submit">
+                Submit Match
+                </button>
+            </p>
+        </form>
     </body>
 </html>
