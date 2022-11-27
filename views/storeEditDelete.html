@@ -6,6 +6,23 @@ database_io = db_interactor()
 idToDelete = request.forms.get("matchIDDelete")
 idToEdit = request.forms.get("matchIDEdit")
 
+#Only runs if deleting data
+if idToDelete != None:
+    database_io.deleteRecord(idToDelete)
+end
+
+#Only runs if editing data
+if idToEdit != None: 
+    matchNumber = request.forms.get("matchNumberForm")
+    teamNumber = request.forms.get("teamNumberForm")
+    movedOffLine = request.forms.get("movedOffLineForm")
+    autoLowScore = request.forms.get("autoLowScoreForm")
+    autoHighScore = request.forms.get("autoHighScoreForm")
+    teleLowScore = request.forms.get("teleLowScoreForm")
+    teleHighScore = request.forms.get("teleHighScoreForm")
+    climbBarSpot = request.forms.get("climbBarSpotForm")
+    database_io.updateRecord(idToEdit, matchNumber, teamNumber, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot)
+end
 %>
 
 <!DOCTYPE HTML>
@@ -17,10 +34,12 @@ idToEdit = request.forms.get("matchIDEdit")
     </head>
     <body>
         %if idToDelete != None: #This is for if we are deleting
-            %database_io.deleteRecord(idToDelete)
-            <h1>Data Deletion Successful</h1>
+            <h1>Data Deletion Successful!</h1>
             <p1>Data with ID {{idToDelete}} was deleted</p1>
         %end
+        %if idToEdit != None: #This is for editing
+            <h1>Data Edit Successful!</h1>
+            <p1>Data with ID {{idToEdit}} was changed</p1>
     </body>
     <form action = "editDelete">
         <button type = "submit">Home</button>
