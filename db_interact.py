@@ -20,6 +20,16 @@ class db_interactor(object):
         #Close the cursor
         cur.close()
     
+    #Get data for ID
+    def returnIdData(self, ID):
+        #Create the cursor
+        cur = db.cursor()
+        results = cur.execute("SELECT * FROM matches WHERE id = ?", (ID,))
+        results.fetchone()
+        #Close the cursor
+        cur.close()
+        return results
+
     #Get match data for a individual team
     def returnTeamMatchData(self, matchNumber, teamNumber):
         #Create the cursor

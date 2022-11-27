@@ -47,7 +47,6 @@ allRecords = database_io.returnAllData()
                 <td>
                     <form action = "confirmDelete" method = "post">
                         <input type = "hidden" name = "matchIDDelete" value = {{match[0]}} />
-                        <input type = "hidden" name = "dataOfID" value = {{match}} />
                         <button type = "submit">Delete</button>
                     </form>
                 </td>
