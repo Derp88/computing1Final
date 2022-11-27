@@ -18,7 +18,9 @@ dataOfID = request.forms.get("dataOfID")
     </head>
     <body>
         <h1>Confirm Data Deletion</h1>
+        <h2>DEBUG RAW DATA - {{dataOfID}}</h2>
         <p1>
+            <!--
             ID: {{dataOfID[0]}}<br>
             Match: {{dataOfID[1]}}<br>
             Team: {{dataOfID[2]}}<br>
@@ -28,6 +30,7 @@ dataOfID = request.forms.get("dataOfID")
             Tele Low: {{dataOfID[6]}}<br>
             Tele High: {{dataOfID[7]}}<br>
             Climb Bar: {{dataOfID[8]}}<br>
+            -->
         </p1>
         <form action = "storeEditDelete" method = "post">
             <input type = "hidden" name = "matchIDDelete" value = {{idToDelete}} />
