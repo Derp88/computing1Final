@@ -1,0 +1,20 @@
+<%
+from bottle import request\
+from db_interact import db_interactor
+database_io = db_interactor()
+
+idToDelete = request.forms.get("matchIDDelete")
+
+%>
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scouting - Confirm Deletion</title>
+        <link rel = "stylesheet" type = "text/css" href = "/static/style.css"/>
+    </head>
+    <body>
+        <h1>Confirm Data Deletion</h1>
+    </body>
+</html>

@@ -74,10 +74,12 @@ def leaderboard():
 def editDelete():
     return template("editDelete.html")
 
-#Page to confirm deletion or input data that needs to be edited
-@post('/inputEditDelete')
-def inputEditDelete():
-    return template("inputEditDelete.html")
+#Page to input data that needs to be edited
+@post('/inputEdit')
+def inputEdit():
+    return template("inputEdit.html")
+
+#Page to confirm deletion
 
 #Page that sends the deletion or changed data to DB
 @post('/storeEditDelete')
