@@ -16,6 +16,7 @@ oldRecord = database_io.returnIdData(idToEdit)
     </head>
     <body>
         <h1>Input New Data</h1>
+        <h2>DEBUG: {{oldRecord}}</h2>
         <form action = "storeEditDelete" method = "post">
             <p>
                 <label for = "matchNumberForm">Match Number</label>
@@ -24,8 +25,8 @@ oldRecord = database_io.returnIdData(idToEdit)
                 name = "matchNumberForm"
                 min = "1"
                 max = "100" 
-                required
-                value = {{oldRecord[1]}}/>
+                value = "{{oldRecord[1]}}"
+                required/>
             </p>
             <!--TEAM NUMBER-->
             <p>
@@ -35,8 +36,8 @@ oldRecord = database_io.returnIdData(idToEdit)
                 name="teamNumberForm"
                 min = "1"
                 max = "10000" 
-                required
-                value = {{oldRecord[2]}}/>
+                value = "{{oldRecord[2]}}"
+                required/>
             </p>
             <!--MOVED FROM START-->
             <p>
@@ -64,8 +65,8 @@ oldRecord = database_io.returnIdData(idToEdit)
                 name = "autoLowScoreForm"
                 min = "0"
                 max = "100" 
-                required
-                value = {{oldRecord[4]}}/>
+                value = "{{oldRecord[4]}}"
+                required/>
                 
             </p>
             <!--AUTO HIGH GOAL SCORE-->
@@ -76,8 +77,8 @@ oldRecord = database_io.returnIdData(idToEdit)
                 name = "autoHighScoreForm"
                 min = "0"
                 max = "100" 
-                required
-                value = {{oldRecord[5]}}/>
+                value = "{{oldRecord[5]}}"
+                required/>
             </p>
             <!--TELEOP LOW GOAL SCORE-->
             <p>
@@ -87,8 +88,8 @@ oldRecord = database_io.returnIdData(idToEdit)
                 name = "teleLowScoreForm"
                 min = "0"
                 max = "100" 
-                required
-                value = {{oldRecord[6]}}/>
+                value = "{{oldRecord[6]}}""
+                required/>
             </p>
             <!--TELEOP HIGH GOAL SCORE-->
             <p>
@@ -98,8 +99,8 @@ oldRecord = database_io.returnIdData(idToEdit)
                 name = "teleHighScoreForm"
                 min = "0"
                 max = "100" 
-                required
-                value = {{oldRecord[7]}}/>
+                value = "{{oldRecord[7]}}"
+                required/>
             </p>
             <!--CLIMB BAR POSITION-->
             <p>
