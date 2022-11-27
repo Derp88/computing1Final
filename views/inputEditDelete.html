@@ -22,10 +22,10 @@ idToDelete = request.forms.get("matchIDDelete")
         <h1>ID TO EDIT IS {{idToEdit}}</h1>
         <h2>ID TO DELETE IS {{idToDelete}}</h2>
 
-        %if idToEdit != "None":
+        %if idToEdit != None:
             <p1>You pressed the edit button!</p1>
         %end
-        %if idToDelete != "None":
+        %if idToDelete != None:
             <p1>You pressed the delete button!</p1>
         %end
     </body>
