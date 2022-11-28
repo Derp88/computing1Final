@@ -89,5 +89,10 @@ def confirmDelete():
 def storeEditDelete():
     return template("storeEditDelete.html")
 
+#Leaderboard that has a team's average performance
+@route('/viewData/leaderboardAverage')
+def leaderboardAverage():
+    return template("viewData/leaderboardAverage.html")
+
 application = default_app()
 
