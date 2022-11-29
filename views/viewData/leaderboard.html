@@ -28,8 +28,33 @@ sortedResults = sorted(resultsWithTotal, key = lambda x: int(x[9]), reverse=True
     </head>
     <body>
         <h1>Leaderboard</h1>
-        %for record in sortedResults:
-            {{record}}<br>
-        %end
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Match</th>
+                <th>Team</th>
+                <th>Auto<br>Low</th>
+                <th>Auto<br>High</th>
+                <th>Off<br>Line</th>
+                <th>Tele<br>Low</th>
+                <th>Tele<br>High</th>
+                <th>Climb<br>Spot</th>
+                <th>Total</th> 
+            </tr>
+            %for record in sortedResults:
+                <tr>
+                    <td>{{record[0]}}</td>
+                    <td>{{record[1]}}</td>
+                    <td>{{record[2]}}</td>
+                    <td>{{record[3]}}</td>
+                    <td>{{record[4]}}</td>
+                    <td>{{record[5]}}</td>
+                    <td>{{record[6]}}</td>
+                    <td>{{record[7]}}</td>
+                    <td>{{record[8]}}</td>
+                    <td>{{record[9]}}</td>
+                </tr>
+            %end
+        </table>
     </body>
 </html>
