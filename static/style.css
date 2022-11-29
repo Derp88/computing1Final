@@ -9,6 +9,8 @@ h1{
     margin: 0 auto;
     display: block;
     width: 80%; 
+    background-color: crimson;
+    color: lightgrey;
 }
 /*TABLE FORMATS*/
 table{
