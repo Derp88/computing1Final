@@ -53,8 +53,30 @@ sortedAverages = sorted(totalAverageData, key = lambda x: int(x[7]), reverse=Tru
     </head>
     <body>
         <h1>Average Leaderboard</h1>
-        %for record in sortedAverages:
-            {{record}}<br>
-        %end
+        <tabke>
+            <tr>
+                <th>Team</th>
+                <th>Auto Low</th>
+                <th>Auto High</th>
+                <th>Off Line</th>
+                <th>Tele Low</th>
+                <th>Tele High</th>
+                <th>Climb Spot</th>
+                <th>Total</th>
+            </tr>
+            %for record in sortedAverages:
+                <tr>
+                    <td>{{record[0]}}</td>
+                    <td>{{round(record[1],3)}}</td>
+                    <td>{{round(record[2],3)}}</td>
+                    <td>{{round(record[3],3)}}</td>
+                    <td>{{round(record[4],3)}}</td>
+                    <td>{{round(record[5],3)}}</td>
+                    <td>{{round(record[6],3)}}</td>
+                    <td>{{round(record[7],3)}}</td>
+                </tr>
+            %end
+        </tabke>
+        
     </body>
 </html>
