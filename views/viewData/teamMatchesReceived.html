@@ -30,13 +30,13 @@ results = database_io.returnTeamData(teamNumber)
             </tr>
             %for match in results:
                 <tr>
-                    <td>match[1]</td>
-                    <td>match[3]</td>
-                    <td>match[4]</td>
-                    <td>match[5]</td>
-                    <td>match[6]</td>
-                    <td>match[7]</td>
-                    <td>match[8]</td>
+                    <td>{{match[1]}}</td>
+                    <td>{{match[3]}}</td>
+                    <td>{{match[4]}}</td>
+                    <td>{{match[5]}}</td>
+                    <td>{{match[6]}}</td>
+                    <td>{{match[7]}}</td>
+                    <td>{{match[8]}}</td>
                 </tr>
             %end
         </table>
