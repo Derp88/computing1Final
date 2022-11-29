@@ -1,0 +1,59 @@
+<%
+from db_interact import db_interactor
+database_io = db_interactor()
+
+teams = database_io.returnTeams()
+
+totalAverageData = []
+for team in teams:
+    matches = database_io.returnTeamData(team)
+    runs = 0
+    autoLowScore = 0
+    autoHighScore = 0
+    movedOffLine = 0
+    teleLowScore = 0
+    teleHighScore = 0
+    climbBarSpot = 0
+    teamAverageData = []
+    for match in matches:
+        runs = runs + 1
+        autoLowScore = autoLowScore + match[3]
+        autoHighScore = autoHighScore + match[4]
+        movedOffLine = movedOffLine + match[5]
+        teleLowScore = teleLowScore + match[6]
+        teleHighScore = teleHighScore + match[7]
+        climbBarSpot = climbBarSpot + match[8]
+    end
+    totalScore = autoLowScore + autoHighScore + movedOffLine + teleLowScore + teleHighScore + climbBarSpot
+    #Turns totals into averages
+    autoLowScore = autoLowScore/runs
+    autoHighScore = autoHighScore/runs
+    movedOffLine = movedOffLine/runs
+    teleLowScore = teleLowScore/runs
+    teleHighScore = teleHighScore/runs
+    climbBarSpot = climbBarSpot/runs
+    totalScore = totalScore/runs
+    #Add data to list
+    teamAverageData.extend(team, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot, totalScore)
+    totalAverageData.append(teamAverageData)
+end
+
+sortedAverages = sorted(totalAverageData, key = lambda x: int(x[7]), reverse=True)
+
+%>
+
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scouting - Average Leaderboard</title>
+        <link rel = "stylesheet" type = "text/css" href = "/static/style.css"/>
+    </head>
+    <body>
+        <h1>Average Leaderboard</h1>
+        %for record in sortedAverages:
+            {{record}}<br>
+        %end
+    </body>
+</html>
