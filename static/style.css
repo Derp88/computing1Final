@@ -4,6 +4,11 @@ body{
 h1{
     text-align: center;
 }
+.menuButtons{
+    text-align: center;
+    font-size:1em
+}
+/*TABLE FORMATS*/
 table{
     border-collapse: collapse;
     width: 100%;
