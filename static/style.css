@@ -2,8 +2,11 @@ body{
     background-color:silver;
 }
 table{
-    border-collapse: collapse;
-    border-spacing: 2em;
+    /*border-collapse: collapse;*/
+    border-spacing: 1em, 0em;
+}
+th{
+    vertical-align: bottom;
 }
 td{
     text-align: center;
