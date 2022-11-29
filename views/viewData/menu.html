@@ -8,12 +8,31 @@
     <body>
         <h1>Match Data Options</h1>
         <p1>
+            <!--
             <a href = "/viewData/individualMatch">View Individual Match Data</a> <br>
             <a href = "/viewData/match">View Match Data</a> <br>
             <a href = "/viewData/teamAverage">View Team's Average Data</a><br>
             <a href = "/viewData/teamMatches">View All of a Team's Matches Data</a><br>
             <a href = "/viewData/leaderboard">Leaderboard</a><br>
-            <a href = "/viewData/leaderboardAverage">Leaderboard (Average Performance)</a>
+            <a href = "/viewData/leaderboardAverage">Leaderboard (Average Performance)</a> -->
+            <form action = "viewData/individualMatch">
+                <button type = "submit" class = "menuButtons">Individual Match Data</button>
+            </form>
+            <form action = "viewData/match">
+                <button type = "submit" class = "menuButtons">Entire Match Data</button>
+            </form>
+            <form action = "viewData/teamAverage">
+                <button type = "submit" class = "menuButtons">Team's Average Data</button>
+            </form>
+            <form action = "viewData/teamMatches">
+                <button type = "submit" class = "menuButtons">Entire Team's Data</button>
+            </form>
+            <form action = "viewData/leaderboard">
+                <button type = "submit" class = "menuButtons">Leaderboard</button>
+            </form>
+            <form action = "viewData/leaderboardAverage">
+                <button type = "submit" class = "menuButtons">Leaderboard (Average Performance)</button>
+            </form>
         </p1>
     </body>
 </html>

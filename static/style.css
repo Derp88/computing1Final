@@ -5,8 +5,10 @@ h1{
     text-align: center;
 }
 .menuButtons{
-    text-align: center;
-    font-size:1em
+    font-size:200%;
+    margin: 0 auto;
+    display: block;
+    width: 80%; 
 }
 /*TABLE FORMATS*/
 table{
