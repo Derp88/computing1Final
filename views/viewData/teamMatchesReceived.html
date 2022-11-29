@@ -17,8 +17,28 @@ results = database_io.returnTeamData(teamNumber)
         <link rel = "stylesheet" type = "text/css" href = "/static/style.css"/>
     </head>
     <body>
-        %for match in results:
-            Match {{match[0]}}: {{match}} <br>
-        %end
+        <h1>{{match[2]}}'s data</h1>
+        <table>
+            <tr>
+                <th>Match</th>
+                <th>Auto<br>Low</th>
+                <th>Auto<br>High</th>
+                <th>Off<br>Line</th>
+                <th>Tele<br>Low</th>
+                <th>Tele<br>High</th>
+                <th>Climb<br>Spot</th>
+            </tr>
+            %for match in results:
+                <tr>
+                    <td>match[1]</td>
+                    <td>match[3]</td>
+                    <td>match[4]</td>
+                    <td>match[5]</td>
+                    <td>match[6]</td>
+                    <td>match[7]</td>
+                    <td>match[8]</td>
+                </tr>
+            %end
+        </table>
     </body>
 </html>
