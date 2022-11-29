@@ -3,6 +3,7 @@ body{
 }
 table{
     border-collapse: collapse;
+    border-spacing: 2em;
 }
 td{
     text-align: center;
