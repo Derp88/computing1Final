@@ -34,7 +34,8 @@ for team in teams:
     climbBarSpot = climbBarSpot/runs
     totalScore = totalScore/runs
     #Add data to list
-    teamAverageData.extend(team, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot, totalScore)
+    data = [team, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot, totalScore]
+    teamAverageData.extend(data)
     totalAverageData.append(teamAverageData)
 end
 
