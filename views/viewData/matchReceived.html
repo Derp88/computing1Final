@@ -17,11 +17,27 @@ results = database_io.returnMatchData(matchNumber)
     </head>
     <body>
         <h1>Match {{matchNumber}}</h1>
-        <p1>
+        <table>
+            <tr>
+                <th>Team</th>
+                <th>Auto<br>Low</th>
+                <th>Auto<br>High</th>
+                <th>Off<br>Line</th>
+                <th>Tele<br>Low</th>
+                <th>Tele<br>High</th>
+                <th>Climb<br>Spot</th>
+            </tr>
             %for team in results:
-                Team:{{team[2]}} Data: {{team}} <br>
+                <tr>
+                    <td>{{team[2]}}</td>
+                    <td>{{team[3]}}</td>
+                    <td>{{team[4]}}</td>
+                    <td>{{team[5]}}</td>
+                    <td>{{team[6]}}</td>
+                    <td>{{team[7]}}</td>
+                    <td>{{team[8]}}</td>
+                </tr>
             %end
-
-        </p1>
+        </table>
     </body>
 </html>
