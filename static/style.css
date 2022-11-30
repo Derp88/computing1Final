@@ -24,7 +24,9 @@ h1{
 /*TABLE FORMATS*/
 table{
     border-collapse: collapse;
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 th{
     vertical-align: bottom;
@@ -35,6 +37,7 @@ th{
     vertical-align: bottom;
     padding-right: 0;
     padding-left: 0;
+    width: 0;
 }
 td{
     text-align: center;
