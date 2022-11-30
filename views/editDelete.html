@@ -41,13 +41,13 @@ allRecords = database_io.returnAllData()
                 <td>
                     <form action = "inputEdit" method = "post">
                         <input type = "hidden" name = "matchIDEdit" value = {{match[0]}} />
-                        <button type = "submit">Edit</button>
+                        <button type = "submit" class = "editButtons">Edit</button>
                     </form>
                 </td>
                 <td>
                     <form action = "confirmDelete" method = "post">
                         <input type = "hidden" name = "matchIDDelete" value = {{match[0]}} />
-                        <button type = "submit">Delete</button>
+                        <button type = "submit" class = "deleteButtons">Delete</button>
                     </form>
                 </td>
             </tr>

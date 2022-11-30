@@ -4,12 +4,21 @@ body{
 h1{
     text-align: center;
 }
+/*BUTTONS*/
 .menuButtons{
     font-size:200%;
     margin: 0 auto;
     display: block;
     width: 80%; 
     background-color: crimson;
+    color: lightgrey;
+}
+.editButtons{
+    background-color:gold;
+    color: lightgrey;
+}
+.deleteButtons{
+    background-color:darkred;
     color: lightgrey;
 }
 /*TABLE FORMATS*/
