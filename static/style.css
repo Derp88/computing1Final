@@ -15,7 +15,7 @@ h1{
 }
 .editButtons{
     background-color:gold;
-    color: lightgrey;
+    color: black;
 }
 .deleteButtons{
     background-color:darkred;
@@ -30,6 +30,11 @@ th{
     vertical-align: bottom;
     padding-right: 1em;
     padding-left: 1em;
+}
+.noPadding{
+    vertical-align: bottom;
+    padding-right: 0;
+    padding-left: 0;
 }
 td{
     text-align: center;
