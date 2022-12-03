@@ -1,6 +1,7 @@
 <%
 from bottle import request
 from db_interact import db_interactor
+database_io = db_interactor()
 
 matchNumber = request.forms.get("matchNumberForm")
 teamNumber = request.forms.get("teamNumberForm")
@@ -11,10 +12,15 @@ teleLowScore = request.forms.get("teleLowScoreForm")
 teleHighScore = int(request.forms.get("teleHighScoreForm")) * 2
 climbBarSpot = request.forms.get("climbBarSpotForm")
 
-database_io = db_interactor()
+#Check to make sure the match the data is going into does not have more than 6 teams in it
+matchData = database_io.returnMatchData(matchNumber)
+numOfTeamsInMatch = len(matchData)
+
+
+
 database_io.setMatchData(matchNumber, teamNumber, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot)
-currentRecord = database_io.returnTeamMatchData(matchNumber, teamNumber)
-allRecords = database_io.returnAllData()
+#currentRecord = database_io.returnTeamMatchData(matchNumber, teamNumber) DEBUG USE
+#allRecords = database_io.returnAllData() DEBUG USE
 %>
 
 <!DOCTYPE HTML>
@@ -40,6 +46,10 @@ allRecords = database_io.returnAllData()
         Teleoperated High Goal Score: {{ teleHighScore }} <br>
         What bar did they climb to: {{ climbBarSpot }}
     </p>
+    <h3>
+        There are {{numOfTeamsInMatch}} teams in Match {{matchNumber}}
+    </h3>
+    <!-- DEBUG USE
     <h3>What was reported in the database</h3>
     <p>
         {{ currentRecord }}
@@ -48,5 +58,6 @@ allRecords = database_io.returnAllData()
     <p>
         {{ allRecords }}
     </p>
+    -->
 </body>
 </html>
