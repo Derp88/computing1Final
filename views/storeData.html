@@ -19,8 +19,6 @@ numOfTeamsInMatch = len(matchData)
 
 
 database_io.setMatchData(matchNumber, teamNumber, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot)
-#currentRecord = database_io.returnTeamMatchData(matchNumber, teamNumber) DEBUG USE
-#allRecords = database_io.returnAllData() DEBUG USE
 %>
 
 <!DOCTYPE HTML>
@@ -49,15 +47,5 @@ database_io.setMatchData(matchNumber, teamNumber, autoLowScore, autoHighScore, m
     <h3>
         There are {{numOfTeamsInMatch}} teams in Match {{matchNumber}}
     </h3>
-    <!-- DEBUG USE
-    <h3>What was reported in the database</h3>
-    <p>
-        {{ #currentRecord }}
-    </p>
-    <h4>What is in the database</h4>
-    <p>
-        {{ #allRecords }}
-    </p>
-    -->
 </body>
 </html>
