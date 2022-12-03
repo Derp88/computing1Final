@@ -16,7 +16,7 @@ climbBarSpot = request.forms.get("climbBarSpotForm")
 matchFull = False
 matchData = database_io.returnMatchData(matchNumber)
 numOfTeamsInMatch = len(matchData)
-if (numOfTeamsInMatch > 6):
+if (numOfTeamsInMatch >= 6):
     matchFull = True
 end
 
@@ -68,6 +68,14 @@ end
             Teleoperated High Goal Score: {{ teleHighScore }} <br>
             What bar did they climb to: {{ climbBarSpot }}
         </p>
-    %end  
+    %end
+    <p>
+        DEBUG FOR TEAM DUPE<br>
+        %for record in matchData:
+            {{record}}<br>
+            {{record[1]}}<br>
+            {{teamDuplicate}}<br>
+        %end
+    </p>
 </body>
 </html>
