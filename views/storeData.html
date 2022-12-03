@@ -23,7 +23,7 @@ end
 #Check to make sure the team being entered isn't a duplicate in the match
 teamDuplicate = False
 for record in matchData:
-    if record[2] == teamNumber:
+    if record[2] == int(teamNumber):
         teamDuplicate = True
     end
 end
