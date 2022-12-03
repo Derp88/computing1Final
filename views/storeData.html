@@ -13,12 +13,28 @@ teleHighScore = int(request.forms.get("teleHighScoreForm")) * 2
 climbBarSpot = request.forms.get("climbBarSpotForm")
 
 #Check to make sure the match the data is going into does not have more than 6 teams in it
+matchFull = False
 matchData = database_io.returnMatchData(matchNumber)
 numOfTeamsInMatch = len(matchData)
+if (numOfTeamsInMatch > 6):
+    matchFull = True
+end
 
+#Check to make sure the team being entered isn't a duplicate in the match
+teamDuplicate = False
+for record in matchData:
+    if record[1] = teamNumber:
+        teamDuplicate = True
+    end
+end
 
+#Only input data if it is not a duplicate or full match
+if (matchFull == False):
+    if(teamDuplicate == False):
+        database_io.setMatchData(matchNumber, teamNumber, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot)
+    end
+end
 
-database_io.setMatchData(matchNumber, teamNumber, autoLowScore, autoHighScore, movedOffLine, teleLowScore, teleHighScore, climbBarSpot)
 %>
 
 <!DOCTYPE HTML>
@@ -29,23 +45,29 @@ database_io.setMatchData(matchNumber, teamNumber, autoLowScore, autoHighScore, m
     <link rel = "stylesheet" type = "text/css" href = "/static/style.css"/>
 </head>
 <body>
-    <h1>Your data was sent!</h1>
-    <p>
-        <a href = "/">Click to return to main menu</a>
-    </p>
-    <h2>The data you sent</h2>
-    <p>
-        Match: {{ matchNumber }} <br>
-        Team Number : {{ teamNumber }} <br>
-        Moved from start in auto: {{ movedOffLine }} <br>
-        Auto Low Goal Score: {{ autoLowScore }} <br>
-        Auto High Goal Score: {{ autoHighScore }} <br>
-        Teleoperated Low Goal Score: {{ teleLowScore}} <br>
-        Teleoperated High Goal Score: {{ teleHighScore }} <br>
-        What bar did they climb to: {{ climbBarSpot }}
-    </p>
-    <h3>
-        There are {{numOfTeamsInMatch}} teams in Match {{matchNumber}}
-    </h3>
+    %if (matchFull):
+        <h1>Error! Data not Sent!</h1>
+        <p>
+            Match {{matchNumber}} is full! There are already 6 teams in it.
+        </p>
+    %elif (teamDuplicate):
+        <h1>Error! Data not Sent!</h1>
+        <p>
+            The entered team {{teamNumber}} is already recorded in match {{matchNumber}}
+        </p>
+    %else:
+        <h1>Your data was sent!</h1>
+        <h2>The data you sent</h2>
+        <p>
+            Match: {{ matchNumber }} <br>
+            Team Number : {{ teamNumber }} <br>
+            Moved from start in auto: {{ movedOffLine }} <br>
+            Auto Low Goal Score: {{ autoLowScore }} <br>
+            Auto High Goal Score: {{ autoHighScore }} <br>
+            Teleoperated Low Goal Score: {{ teleLowScore}} <br>
+            Teleoperated High Goal Score: {{ teleHighScore }} <br>
+            What bar did they climb to: {{ climbBarSpot }}
+        </p>
+    %end  
 </body>
 </html>
