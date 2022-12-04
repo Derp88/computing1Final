@@ -47,7 +47,7 @@ oldRecord = database_io.returnIdData(idToEdit)
                 name = "movedOffLineForm"
                 min = "0"
                 max = "2" 
-                value = "{{oldRecord[3]}}"
+                value = "{{oldRecord[5]}}"
                 required/>
                 <br>
 
@@ -58,7 +58,7 @@ oldRecord = database_io.returnIdData(idToEdit)
                 name = "autoLowScoreForm"
                 min = "0"
                 max = "100" 
-                value = "{{oldRecord[4]}}"
+                value = "{{oldRecord[3]}}"
                 required/>
                 <br>
             <!--AUTO HIGH GOAL SCORE-->
@@ -68,7 +68,7 @@ oldRecord = database_io.returnIdData(idToEdit)
                 name = "autoHighScoreForm"
                 min = "0"
                 max = "100" 
-                value = "{{oldRecord[5]}}"
+                value = "{{oldRecord[4]}}"
                 required/>
 
                 <h2>Teleop Info</h2>
@@ -105,10 +105,6 @@ oldRecord = database_io.returnIdData(idToEdit)
                 <button type = "submit">
                 Submit Match
                 </button>
-                <br>
-                <form action = "editDelete">
-                    <button type = "submit">Cancel</button>
-                </form>
         </form>
     </body>
 </html>
