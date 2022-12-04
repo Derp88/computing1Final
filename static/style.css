@@ -5,6 +5,18 @@ h1{
     text-align: center;
     font-size: 2em;
 }
+.navBar{
+    background-color: crimson;
+    overflow: hidden;
+}
+.navBar a{
+    float: left;
+    color: lightgray;
+    text-align: center;
+    padding: 1em 1em;
+    text-decoration: none;
+    font-size: 1em;
+}
 /*BUTTONS*/
 .menuButtons{
     font-size: 3vh;
