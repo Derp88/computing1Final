@@ -101,9 +101,14 @@ oldRecord = database_io.returnIdData(idToEdit)
                 max = "15" 
                 value = "{{oldRecord[8]}}"
                 required/>
+                <br>
                 <button type = "submit">
                 Submit Match
                 </button>
+                <br>
+                <form action = "editDelete">
+                    <button type = "submit">Cancel</button>
+                </form>
         </form>
     </body>
 </html>

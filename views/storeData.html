@@ -57,7 +57,7 @@ end
         </p>
     %else:
         <h1>Your data was sent!</h1>
-        <h2>The data you sent</h2>
+        <h2>The data you sent:</h2>
         <p>
             Match: {{ matchNumber }} <br>
             Team Number : {{ teamNumber }} <br>
@@ -69,5 +69,13 @@ end
             What bar did they climb to: {{ climbBarSpot }}
         </p>
     %end
+    <br>
+    <form action = "recordMatch">
+        <button type = "submit">Sumbit Another</button>
+    </form>
+    <br>
+    <form action = "">
+        <button type = "submit">Main Menu</button>
+    </form>
 </body>
 </html>
