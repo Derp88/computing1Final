@@ -16,10 +16,10 @@ oldRecord = database_io.returnIdData(idToEdit)
     </head>
     <body>
         <h1>Input New Data</h1>
-        <form action = "storeEditDelete" method = "post">
+        <form action = "storeEditDelete" method = "post" class = "inputform">
                 <input type = "hidden" name = "matchIDEdit" value = {{idToEdit}} />
 
-                <label for = "matchNumberForm">Match</label>
+                <label for = "matchNumberForm" class = "inputLabels">Match</label>
                 <input type = "number"
                 id ="matchNumberForm"
                 name = "matchNumberForm"
@@ -28,7 +28,7 @@ oldRecord = database_io.returnIdData(idToEdit)
                 value = "{{oldRecord[1]}}"
                 required/>
             <!--TEAM NUMBER-->
-                <label for = "teamNumberForm">Team</label>
+                <label for = "teamNumberForm" class = "inputLabels">Team</label>
                 <input type = "number"
                 id ="teamNumberForm"
                 name="teamNumberForm"
@@ -37,7 +37,7 @@ oldRecord = database_io.returnIdData(idToEdit)
                 value = "{{oldRecord[2]}}"
                 required/>
             <!--MOVED FROM START-->
-                <label for = "movedOffLineForm">Off Line</label>
+                <label for = "movedOffLineForm" class = "inputLabels">Off Line</label>
                 <input type = "number"
                 id ="movedOffLineForm"
                 name = "movedOffLineForm"
@@ -47,7 +47,7 @@ oldRecord = database_io.returnIdData(idToEdit)
                 required/>
             
             <!--AUTO LOW GOAL SCORE-->
-                <label for = "autoLowScoreForm">Auto Low</label>
+                <label for = "autoLowScoreForm" class = "inputLabels">Auto Low</label>
                 <input type = "number"
                 id ="autoLowScoreForm"
                 name = "autoLowScoreForm"
@@ -56,7 +56,7 @@ oldRecord = database_io.returnIdData(idToEdit)
                 value = "{{oldRecord[4]}}"
                 required/>
             <!--AUTO HIGH GOAL SCORE-->
-                <label for = "autoHighScoreForm">Auto High</label>
+                <label for = "autoHighScoreForm" class = "inputLabels">Auto High</label>
                 <input type = "number"
                 id ="autoHighScoreForm"
                 name = "autoHighScoreForm"
@@ -65,7 +65,7 @@ oldRecord = database_io.returnIdData(idToEdit)
                 value = "{{oldRecord[5]}}"
                 required/>
             <!--TELEOP LOW GOAL SCORE-->
-                <label for = "teleLowScoreForm">Tele Low</label>
+                <label for = "teleLowScoreForm" class = "inputLabels">Tele Low</label>
                 <input type = "number"
                 id ="teleLowScoreForm"
                 name = "teleLowScoreForm"
@@ -74,7 +74,7 @@ oldRecord = database_io.returnIdData(idToEdit)
                 value = "{{oldRecord[6]}}""
                 required/>
             <!--TELEOP HIGH GOAL SCORE-->
-                <label for = "teleHighScoreForm">Tele High</label>
+                <label for = "teleHighScoreForm" class = "inputLabels">Tele High</label>
                 <input type = "number"
                 id ="teleHighScoreForm"
                 name = "teleHighScoreForm"
@@ -83,7 +83,7 @@ oldRecord = database_io.returnIdData(idToEdit)
                 value = "{{oldRecord[7]}}"
                 required/>
             <!--CLIMB BAR POSITION-->
-                <label for = "climbBarSpotForm">Climb Spot</label>
+                <label for = "climbBarSpotForm" class = "inputLabels">Climb Spot</label>
                 <input type = "number"
                 id ="climbBarSpotForm"
                 name = "climbBarSpotForm"
