@@ -38,6 +38,8 @@ h1{
 }
 .radioLabels{
     display: block;
+    padding-left:6em;
+    text-align: left;
 }
 /*TABLE FORMATS*/
 table{
