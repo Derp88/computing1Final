@@ -3,16 +3,18 @@ body{
 }
 h1{
     text-align: center;
-    font-size: 1em;
+    font-size: 2em;
 }
 /*BUTTONS*/
 .menuButtons{
-    font-size: 1em;
+    font-size: 1.9em;
     margin: 0 auto;
     display: block;
     width: 80%; 
     background-color: crimson;
     color: lightgrey;
+    padding-top: 3em;
+    padding-bottom: 3em;
 }
 .editButtons{
     background-color:gold;
