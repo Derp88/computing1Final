@@ -36,6 +36,9 @@ h1{
     width: 6em;
     text-align: right;
 }
+.radioLabels{
+    display: block;
+}
 /*TABLE FORMATS*/
 table{
     border-collapse: collapse;
