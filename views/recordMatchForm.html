@@ -29,7 +29,7 @@
 
             <h2>Auto Info</h2>
             <!--MOVED FROM START-->
-            <label>Did they move from their starting spot?</label>
+            <label>Robot move off line?</label>
             <!--Button for true-->
             <label for = "movedOffLineTrue">True</label>
             <input type = "radio"
@@ -46,7 +46,7 @@
             required/>
 
             <!--AUTO LOW GOAL SCORE-->
-            <label for = "autoLowScoreForm">AUTO: Scored in low goal</label>
+            <label for = "autoLowScoreForm">Low goal</label>
             <input type = "number"
             id ="autoLowScoreForm"
             name = "autoLowScoreForm"
@@ -54,69 +54,72 @@
             max = "100" 
             required/>
             <!--AUTO HIGH GOAL SCORE-->
-            <label for = "autoHighScoreForm">AUTO: Scored in high goal</label>
+            <label for = "autoHighScoreForm">High goal</label>
             <input type = "number"
             id ="autoHighScoreForm"
             name = "autoHighScoreForm"
             min = "0"
             max = "100" 
             required/>
-    <!--TELEOP LOW GOAL SCORE-->
-        <label for = "teleLowScoreForm">Teleop: Scored in low goal</label>
-        <input type = "number"
-        id ="teleLowScoreForm"
-        name = "teleLowScoreForm"
-        min = "0"
-        max = "100" 
-        required/>
-    <!--TELEOP HIGH GOAL SCORE-->
-        <label for = "teleHighScoreForm">Teleop: Scored in high goal</label>
-        <input type = "number"
-        id ="teleHighScoreForm"
-        name = "teleHighScoreForm"
-        min = "0"
-        max = "100" 
-        required/>
-    <!--CLIMB BAR POSITION-->
-        <label>What bar did they climb to?</label>
-        <!--Button for no climb-->
-        <label for = "climbBarSpotNone">Didn't</label>
-        <input type = "radio"
-        id ="climbBarSpotNone"
-        name="climbBarSpotForm"
-        value = 0 
-        required/>
-        <!--Button for low rung-->
-        <label for = "climbBarSpotLow">Low</label>
-        <input type = "radio"
-        id ="climbBarSpotLow"
-        name="climbBarSpotForm"
-        value = 4 
-        required/>
-        <!--Button for mid rung-->
-        <label for = "climbBarSpotMid">Mid</label>
-        <input type = "radio"
-        id ="climbBarSpotMid"
-        name="climbBarSpotForm"
-        value = 6 
-        required/>
-        <!--Button for high rung-->
-        <label for = "climbBarSpotHigh">High</label>
-        <input type = "radio"
-        id ="climbBarSpotHigh"
-        name="climbBarSpotForm"
-        value = 10 
-        required/>
-        <!--Button for traversal rung-->
-        <label for = "climbBarSpotTraversal">Traversal</label>
-        <input type = "radio"
-        id ="climbBarSpotTraversal"
-        name="climbBarSpotForm"
-        value = 15 
-        required/>
-        <button type = "submit">
-        Submit Match
-        </button>
+
+            <h3>Teleop Info</h3>
+            <!--TELEOP LOW GOAL SCORE-->
+            <label for = "teleLowScoreForm">Low goal</label>
+            <input type = "number"
+            id ="teleLowScoreForm"
+            name = "teleLowScoreForm"
+            min = "0"
+            max = "100" 
+            required/>
+            <!--TELEOP HIGH GOAL SCORE-->
+            <label for = "teleHighScoreForm">High goal</label>
+            <input type = "number"
+            id ="teleHighScoreForm"
+            name = "teleHighScoreForm"
+            min = "0"
+            max = "100" 
+            required/>
+            <!--CLIMB BAR POSITION-->
+            <label>Climb Bar</label>
+            <!--Button for no climb-->
+            <label for = "climbBarSpotNone">Didn't</label>
+            <input type = "radio"
+            id ="climbBarSpotNone"
+            name="climbBarSpotForm"
+            value = 0 
+            required/>
+            <!--Button for low rung-->
+            <label for = "climbBarSpotLow">Low</label>
+            <input type = "radio"
+            id ="climbBarSpotLow"
+            name="climbBarSpotForm"
+            value = 4 
+            required/>
+            <!--Button for mid rung-->
+            <label for = "climbBarSpotMid">Mid</label>
+            <input type = "radio"
+            id ="climbBarSpotMid"
+            name="climbBarSpotForm"
+            value = 6 
+            required/>
+            <!--Button for high rung-->
+            <label for = "climbBarSpotHigh">High</label>
+            <input type = "radio"
+            id ="climbBarSpotHigh"
+            name="climbBarSpotForm"
+            value = 10 
+            required/>
+            <!--Button for traversal rung-->
+            <label for = "climbBarSpotTraversal">Traversal</label>
+            <input type = "radio"
+            id ="climbBarSpotTraversal"
+            name="climbBarSpotForm"
+            value = 15 
+            required/>
+
+            <button type = "submit">
+            Submit Match
+            </button>
         </form>
     </body>
 </html>
