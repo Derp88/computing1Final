@@ -13,8 +13,8 @@ h1{
     width: 80%; 
     background-color: crimson;
     color: lightgrey;
-    padding-top: 3em;
-    padding-bottom: 3em;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
 }
 .editButtons{
     background-color:gold;
