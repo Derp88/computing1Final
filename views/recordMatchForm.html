@@ -1,73 +1,67 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <title>Scouting - Record</title>
-    <link rel = "stylesheet" type = "text/css" href = "/static/style.css"/>
-</head>
-<body>
-    <h1>Insert Match Data</h1>
-    <form action= "/storeData" method = "post">
-    <!--MATCH NUMBER-->
-    <p>
-        <label for = "matchNumberForm">Match Number</label>
-        <input type = "number"
-        id ="matchNumberForm"
-        name = "matchNumberForm"
-        min = "1"
-        max = "100" 
-        required/>
-    </p>
-    <!--TEAM NUMBER-->
-    <p>
-        <label for = "teamNumberForm">Team Number</label>
-        <input type = "number"
-        id ="teamNumberForm"
-        name="teamNumberForm"
-        min = "1"
-        max = "10000" 
-        required/>
-    </p>
-    <!--MOVED FROM START-->
-    <p>
-        <label>Did they move from their starting spot?</label>
-        <!--Button for true-->
-        <label for = "movedOffLineTrue">True</label>
-        <input type = "radio"
-        id ="movedOffLineTrue"
-        name="movedOffLineForm"
-        value = 2 
-        required/>
-        <!--Button for false-->
-        <label for = "movedOffLineFalse">False</label>
-        <input type = "radio"
-        id ="movedOffLineFalse"
-        name="movedOffLineForm"
-        value = 0 
-        required/>
-    </p>
-    <!--AUTO LOW GOAL SCORE-->
-    <p>
-        <label for = "autoLowScoreForm">AUTO: Scored in low goal</label>
-        <input type = "number"
-        id ="autoLowScoreForm"
-        name = "autoLowScoreForm"
-        min = "0"
-        max = "100" 
-        required/>
-    </p>
-    <!--AUTO HIGH GOAL SCORE-->
-    <p>
-        <label for = "autoHighScoreForm">AUTO: Scored in high goal</label>
-        <input type = "number"
-        id ="autoHighScoreForm"
-        name = "autoHighScoreForm"
-        min = "0"
-        max = "100" 
-        required/>
-    </p>
+    <head>
+        <meta charset="UTF-8">
+        <title>Scouting - Record</title>
+        <link rel = "stylesheet" type = "text/css" href = "/static/style.css"/>
+    </head>
+    <body>
+        <h1>Insert Match Data</h1>
+        <form action= "/storeData" method = "post">
+            <h2>Record Info</h2>
+            <!--MATCH NUMBER-->
+            <label for = "matchNumberForm">Match</label>
+            <input type = "number"
+            id ="matchNumberForm"
+            name = "matchNumberForm"
+            min = "1"
+            max = "100" 
+            required/>
+
+            <!--TEAM NUMBER-->
+            <label for = "teamNumberForm">Team</label>
+            <input type = "number"
+            id ="teamNumberForm"
+            name="teamNumberForm"
+            min = "1"
+            max = "10000" 
+            required/>
+
+            <h2>Auto Info</h2>
+            <!--MOVED FROM START-->
+            <label>Did they move from their starting spot?</label>
+            <!--Button for true-->
+            <label for = "movedOffLineTrue">True</label>
+            <input type = "radio"
+            id ="movedOffLineTrue"
+            name="movedOffLineForm"
+            value = 2 
+            required/>
+            <!--Button for false-->
+            <label for = "movedOffLineFalse">False</label>
+            <input type = "radio"
+            id ="movedOffLineFalse"
+            name="movedOffLineForm"
+            value = 0 
+            required/>
+
+            <!--AUTO LOW GOAL SCORE-->
+            <label for = "autoLowScoreForm">AUTO: Scored in low goal</label>
+            <input type = "number"
+            id ="autoLowScoreForm"
+            name = "autoLowScoreForm"
+            min = "0"
+            max = "100" 
+            required/>
+            <!--AUTO HIGH GOAL SCORE-->
+            <label for = "autoHighScoreForm">AUTO: Scored in high goal</label>
+            <input type = "number"
+            id ="autoHighScoreForm"
+            name = "autoHighScoreForm"
+            min = "0"
+            max = "100" 
+            required/>
     <!--TELEOP LOW GOAL SCORE-->
-    <p>
         <label for = "teleLowScoreForm">Teleop: Scored in low goal</label>
         <input type = "number"
         id ="teleLowScoreForm"
@@ -75,9 +69,7 @@
         min = "0"
         max = "100" 
         required/>
-    </p>
     <!--TELEOP HIGH GOAL SCORE-->
-    <p>
         <label for = "teleHighScoreForm">Teleop: Scored in high goal</label>
         <input type = "number"
         id ="teleHighScoreForm"
@@ -85,9 +77,7 @@
         min = "0"
         max = "100" 
         required/>
-    </p>
     <!--CLIMB BAR POSITION-->
-    <p>
         <label>What bar did they climb to?</label>
         <!--Button for no climb-->
         <label for = "climbBarSpotNone">Didn't</label>
@@ -124,15 +114,9 @@
         name="climbBarSpotForm"
         value = 15 
         required/>
-    </p>
-    <p>
         <button type = "submit">
         Submit Match
         </button>
-    </p>
-
-
-    </form>
-</body>
-
+        </form>
+    </body>
 </html>
