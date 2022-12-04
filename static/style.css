@@ -22,7 +22,7 @@ h1{
     color: lightgrey;
 }
 /*FORMS*/
-form{
+.inputform{
     background-color:lightgray;
     border: 5px solid crimson;
     border-radius: 1em;
