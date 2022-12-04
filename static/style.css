@@ -21,6 +21,10 @@ h1{
     background-color:darkred;
     color: lightgrey;
 }
+/*FORMS*/
+form{
+    width: 100%;
+}
 /*TABLE FORMATS*/
 table{
     border-collapse: collapse;
