@@ -10,16 +10,16 @@
         <form action= "/storeData" method = "post" class = "inputform">
             <h2>Record Info</h2>
             <!--MATCH NUMBER-->
-            <label for = "matchNumberForm">Match</label>
+            <label for = "matchNumberForm" class = "inputLabels">Match</label>
             <input type = "number"
             id ="matchNumberForm"
             name = "matchNumberForm"
             min = "1"
             max = "100" 
             required/>
-
+            <br>
             <!--TEAM NUMBER-->
-            <label for = "teamNumberForm">Team</label>
+            <label for = "teamNumberForm" class = "inputLabels">Team</label>
             <input type = "number"
             id ="teamNumberForm"
             name="teamNumberForm"
@@ -29,7 +29,7 @@
 
             <h2>Auto Info</h2>
             <!--MOVED FROM START-->
-            <label>Robot move off line?</label>
+            <label class = "inputLabels">Robot move off line?</label>
             <!--Button for true-->
             <label for = "movedOffLineTrue">True</label>
             <input type = "radio"
@@ -47,7 +47,7 @@
 
             <br>
             <!--AUTO LOW GOAL SCORE-->
-            <label for = "autoLowScoreForm">Low goal</label>
+            <label for = "autoLowScoreForm" class = "inputLabels">Low goal</label>
             <input type = "number"
             id ="autoLowScoreForm"
             name = "autoLowScoreForm"
@@ -56,7 +56,7 @@
             required/>
             <br>
             <!--AUTO HIGH GOAL SCORE-->
-            <label for = "autoHighScoreForm">High goal</label>
+            <label for = "autoHighScoreForm" class = "inputLabels">High goal</label>
             <input type = "number"
             id ="autoHighScoreForm"
             name = "autoHighScoreForm"
@@ -66,7 +66,7 @@
 
             <h2>Teleop Info</h2>
             <!--TELEOP LOW GOAL SCORE-->
-            <label for = "teleLowScoreForm">Low goal</label>
+            <label for = "teleLowScoreForm" class = "inputLabels">Low goal</label>
             <input type = "number"
             id ="teleLowScoreForm"
             name = "teleLowScoreForm"
@@ -75,7 +75,7 @@
             required/>
             <br>
             <!--TELEOP HIGH GOAL SCORE-->
-            <label for = "teleHighScoreForm">High goal</label>
+            <label for = "teleHighScoreForm" class = "inputLabels">High goal</label>
             <input type = "number"
             id ="teleHighScoreForm"
             name = "teleHighScoreForm"
@@ -84,7 +84,7 @@
             required/>
             <br>
             <!--CLIMB BAR POSITION-->
-            <label>Climb Bar</label>
+            <label class = "inputLabels">Climb Bar</label>
             <!--Button for no climb-->
             <label for = "climbBarSpotNone">Didn't</label>
             <input type = "radio"
