@@ -45,21 +45,29 @@ end
         <h1>Results for {{teamNumber}} in Match {{matchNumber}}</h1>
         <p1>
             <div class = "gridData-Container">
+                <div class = "gridData-Label">Low Score</div>
                 <div class = "gridData-Item">{{results[3]}}</div>
+                
+                <div class = "gridData-Label">High Score</div>
                 <div class = "gridData-Item">{{results[4]}}</div>
-                <div class = "gridData-Item">{{results[5]}}</div>
-                <div class = "gridData-Item">{{results[6]}}</div>
-                <div class = "gridData-Item">{{results[7]}}</div>
-                <div class = "gridData-Item">{{results[8]}}</div>
-                <div class = "gridData-Label">Low Score</div>
-                <div class = "gridData-Label">High Score</div>
+                
                 <div class = "gridData-Label">Off Line</div>
+                <div class = "gridData-Item">{{results[5]}}</div>
+
+                <div class = "gridData-Item">{{results[6]}}</div>
                 <div class = "gridData-Label">Low Score</div>
+
+                <div class = "gridData-Item">{{results[7]}}</div>
                 <div class = "gridData-Label">High Score</div>
+
+                <div class = "gridData-Item">{{results[8]}}</div>
                 <div class = "gridData-Label">Climb Spot</div>
+            
             </div>
 
-
+            <br>
+            <br>
+            <br>
             Auto Low Score: {{results[3]}} <br>
             Auto High Score: {{results[4]}} <br>
             Moved off starting line: {{movedFromStart}} or {{results[5]}} points <br>

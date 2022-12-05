@@ -94,10 +94,15 @@ td{
 /*GRID FOR DATA DISPLAY*/
 .gridData-Container{
     display: grid;
+    grid-template-columns: 80% 20%;
+    margin: auto;
+    width: 50%;
 }
 .gridData-Item{
     background-color: lightgray
 }
 .gridData-Label{
     background-color: crimson;
+    text-align: right;
+    color: lightgrey;
 }
