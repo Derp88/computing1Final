@@ -10,6 +10,7 @@ h1{
     background-color: crimson;
     overflow: hidden;
 }
+/*NAV BAR*/
 .navBar a{
     float: left;
     color: lightgray;
@@ -89,4 +90,14 @@ td{
     text-align: center;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+}
+/*GRID FOR DATA DISPLAY*/
+.gridData-Container{
+    display: grid;
+}
+.gridData-Item{
+    background-color: lightgray
+}
+.gridData-Label{
+    background-color: crimson;
 }
