@@ -14,6 +14,13 @@ teams = database_io.returnTeams()
         <link rel = "stylesheet" type = "text/css" href = "/static/style.css"/>
     </head>
     <body>
+        <div class = "navBar">
+            <a href = "/">Menu</a>
+            <a href = "/recordMatch">Record</a>
+            <a href = "/viewData">View</a>
+            <a href = "/editDelete">Edit</a>
+            <a href = "https://github.com/Derp88/computing1Final" class = "aRight">Source</a>
+        </div>
         <!--Please note this file is basically the same as individualMatch, because it has about the same task. Just different result-->
         <h1>Team Matches Data</h1>
         <form action = "teamMatchesReceived" method = "post">
