@@ -1,5 +1,6 @@
 body{
     background-color:silver;
+    margin: 0;
 }
 h1{
     text-align: center;
@@ -13,7 +14,7 @@ h1{
     float: left;
     color: lightgray;
     text-align: center;
-    padding: 1em 1em;
+    padding: 0.65em 1em;
     text-decoration: none;
     font-size: 1em;
 }
@@ -42,6 +43,7 @@ h1{
     border: 5px solid crimson;
     border-radius: 1em;
     padding: 1em;
+    margin: 1em;
 }
 .inputLabels{
     display: inline-block;
