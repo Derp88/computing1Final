@@ -33,6 +33,13 @@ end
         <link rel = "stylesheet" type = "text/css" href = "/static/style.css"/>
     </head>
     <body>
+        <div class = "navBar">
+            <a href = "/">Menu</a>
+            <a href = "recordMatch">Record</a>
+            <a href = "viewData">View</a>
+            <a href = "editDelete">Edit</a>
+            <a href = "https://github.com/Derp88/computing1Final" class = "aRight">Source</a>
+        </div>
         %if idToDelete != None: #This is for if we are deleting
             <h1>Data Deletion Successful!</h1>
             <p1>Data with ID {{idToDelete}} was deleted</p1>
