@@ -97,9 +97,13 @@ td{
     grid-template-columns: 80% 20%;
     margin: auto;
     width: 50%;
+    border: 10px solid crimson;
+    border-radius: 1em;
 }
 .gridData-Item{
-    background-color: lightgray
+    background-color: silver;
+    text-align: center;
+    border: 1px solid black;
 }
 .gridData-Label{
     background-color: crimson;
