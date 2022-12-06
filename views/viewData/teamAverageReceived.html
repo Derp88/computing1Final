@@ -76,7 +76,70 @@ climbBarSpot = climbBarSpot/runs
             <a href = "/editDelete">Edit</a>
             <a href = "https://github.com/Derp88/computing1Final" class = "aRight">Source</a>
         </div>
-        <h1> {{teamNumber}} Average Stats</h1>
+        <h1> {{teamNumber}}'s Average Stats</h1>
+        <div class = "gridData-Container">
+            <div class = "gridData-Label">Low Score</div>
+            <div class = "gridData-Item">{{round(autoLowScore,3)}}</div>
+            
+            <div class = "gridData-Label">High Score</div>
+            <div class = "gridData-Item">{{round(autoHighScore,3)}}</div>
+            
+            <div class = "gridData-Label">Off Line</div>
+            <div class = "gridData-Item">{{round(movedOffLine,3)}}</div>
+
+            <div class = "gridData-Label">Low Score</div>
+            <div class = "gridData-Item">{{round(teleLowScore,3)}}</div>
+            
+            <div class = "gridData-Label">High Score</div>
+            <div class = "gridData-Item">{{round(teleHighScore,3)}}</div>
+            
+            <div class = "gridData-Label">Climb Spot</div>
+            <div class = "gridData-Item">{{round(climbBarSpot,3)}}</div>
+        </div>
+
+        <h2> {{teamNumber}}'s Best Match ({{bestMatch[1]}})</h2>
+        <div class = "gridData-Container">
+            <div class = "gridData-Label">Low Score</div>
+            <div class = "gridData-Item">{{bestMatch[3]}}</div>
+            
+            <div class = "gridData-Label">High Score</div>
+            <div class = "gridData-Item">{{bestMatch[4]}}</div>
+            
+            <div class = "gridData-Label">Off Line</div>
+            <div class = "gridData-Item">{{bestMatch[5]}}</div>
+
+            <div class = "gridData-Label">Low Score</div>
+            <div class = "gridData-Item">{{bestMatch[6]}}</div>
+            
+            <div class = "gridData-Label">High Score</div>
+            <div class = "gridData-Item">{{bestMatch[7]}}</div>
+            
+            <div class = "gridData-Label">Climb Spot</div>
+            <div class = "gridData-Item">{{bestMatch[8]}}</div>
+        </div>
+
+        <h2> {{teamNumber}}'s Worst Match ({{worstMatch[1]}})</h2>
+        <div class = "gridData-Container">
+            <div class = "gridData-Label">Low Score</div>
+            <div class = "gridData-Item">{{worstMatch[3]}}</div>
+            
+            <div class = "gridData-Label">High Score</div>
+            <div class = "gridData-Item">{{worstMatch[4]}}</div>
+            
+            <div class = "gridData-Label">Off Line</div>
+            <div class = "gridData-Item">{{worstMatch[5]}}</div>
+
+            <div class = "gridData-Label">Low Score</div>
+            <div class = "gridData-Item">{{worstMatch[6]}}</div>
+            
+            <div class = "gridData-Label">High Score</div>
+            <div class = "gridData-Item">{{worstMatch[7]}}</div>
+            
+            <div class = "gridData-Label">Climb Spot</div>
+            <div class = "gridData-Item">{{worstMatch[8]}}</div>
+        </div>
+
+
         <p1>
             Auto Low Score: {{round(autoLowScore,3)}} <br>
             Auto High Score: {{round(autoHighScore,3)}} <br>
