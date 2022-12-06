@@ -52,11 +52,11 @@ dataOfID = database_io.returnIdData(idToDelete)
             <div class = "gridData-Label">Climb Spot</div>
             <div class = "gridData-Item">{{dataOfID[8]}}</div>
         </div>
-        <form action = "storeEditDelete" method = "post">
+        <form action = "storeEditDelete" method = "post" class = "selector">
             <input type = "hidden" name = "matchIDDelete" value = {{idToDelete}} />
             <button type = "submit">Delete</button>
         </form>
-        <form action = "editDelete">
+        <form action = "editDelete" class = "selector">
             <button type = "submit">Cancel</button>
         </form>
     </body>
