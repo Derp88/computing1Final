@@ -22,7 +22,7 @@ teams = database_io.returnTeams()
             <a href = "https://github.com/Derp88/computing1Final" class = "aRight">Source</a>
         </div>
         <h1>Individual Match Data</h1>
-        <form action = "individualMatchChoose" method = "post">
+        <form action = "individualMatchChoose" method = "post" class = "selector">
             <!--INPUT FOR TEAM-->
             <select name = "teamNumber" required>
                 %for team in teams:

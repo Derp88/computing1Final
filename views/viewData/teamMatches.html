@@ -23,7 +23,7 @@ teams = database_io.returnTeams()
         </div>
         <!--Please note this file is basically the same as individualMatch, because it has about the same task. Just different result-->
         <h1>Team Matches Data</h1>
-        <form action = "teamMatchesReceived" method = "post">
+        <form action = "teamMatchesReceived" method = "post" class = "selector">
             <!--INPUT FOR TEAM-->
             <select name = "teamNumber" required>
                 %for team in teams:
