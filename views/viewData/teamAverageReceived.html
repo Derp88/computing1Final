@@ -38,11 +38,17 @@ for match in results:
     if (matchTotal > bestMatchScore):
         bestMatchScore = matchTotal
         bestMatchID = match[0]
+    end
 
     #Finds worst match
     if (matchTotal < worstMatchScore):
         worstMatchScore = matchTotal
         worstMatchID = match[0]
+    end
+
+bestMatch = database_io.returnIdData(bestMatchID)
+worstMatch = database_io.returnIdData(worstMatchID)
+
 
 end
 #Turns totals into averages
