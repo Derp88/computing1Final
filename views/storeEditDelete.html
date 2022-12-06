@@ -42,14 +42,14 @@ end
         </div>
         %if idToDelete != None: #This is for if we are deleting
             <h1>Data Deletion Successful!</h1>
-            <p1>Data with ID {{idToDelete}} was deleted</p1>
+            <p1 class = "selector">Data with ID {{idToDelete}} was deleted</p1>
         %end
         %if idToEdit != None: #This is for editing
             <h1>Data Edit Successful!</h1>
-            <p1>Data with ID {{idToEdit}} was changed</p1>
+            <p1 class = "selector">Data with ID {{idToEdit}} was changed</p1>
         %end
     </body>
-    <form action = "editDelete">
+    <form action = "editDelete" class = "selector">
         <button type = "submit">Home</button>
     </form>
 </html>
