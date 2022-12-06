@@ -97,7 +97,7 @@ climbBarSpot = climbBarSpot/runs
             <div class = "gridData-Item">{{round(climbBarSpot,3)}}</div>
         </div>
 
-        <h2> {{teamNumber}}'s Best Match ({{bestMatch[1]}})</h2>
+        <h1> {{teamNumber}}'s Best Match ({{bestMatch[1]}})</h1>
         <div class = "gridData-Container">
             <div class = "gridData-Label">Low Score</div>
             <div class = "gridData-Item">{{bestMatch[3]}}</div>
@@ -118,7 +118,7 @@ climbBarSpot = climbBarSpot/runs
             <div class = "gridData-Item">{{bestMatch[8]}}</div>
         </div>
 
-        <h2> {{teamNumber}}'s Worst Match ({{worstMatch[1]}})</h2>
+        <h1> {{teamNumber}}'s Worst Match ({{worstMatch[1]}})</h1>
         <div class = "gridData-Container">
             <div class = "gridData-Label">Low Score</div>
             <div class = "gridData-Item">{{worstMatch[3]}}</div>
@@ -138,19 +138,5 @@ climbBarSpot = climbBarSpot/runs
             <div class = "gridData-Label">Climb Spot</div>
             <div class = "gridData-Item">{{worstMatch[8]}}</div>
         </div>
-
-
-        <p1>
-            Auto Low Score: {{round(autoLowScore,3)}} <br>
-            Auto High Score: {{round(autoHighScore,3)}} <br>
-            Moved off starting line: {{round(movedOffLine,3)}} <br>
-            Teleop Low Score: {{round(teleLowScore,3)}} <br>
-            Teleop High Score: {{round(teleHighScore,3)}} <br>
-            Climb Bar Spot: {{round(climbBarSpot,3)}} <br>
-            <br>
-
-            The best match the team had was with ID: {{bestMatchID}}<br>
-            The worst  match the team had was with ID: {{worstMatchID}}<br>
-        </p1>
     </body>
 </html>
