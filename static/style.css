@@ -8,6 +8,7 @@ h1{
 }
 .selector{
     margin: 0 auto;
+    width: 100%;
 }
 /*NAV BAR*/
 .navBar{
