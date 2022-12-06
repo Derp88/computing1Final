@@ -6,11 +6,14 @@ h1{
     text-align: center;
     font-size: 2em;
 }
+.selector{
+    margin: 0 auto;
+}
+/*NAV BAR*/
 .navBar{
     background-color: crimson;
     overflow: hidden;
 }
-/*NAV BAR*/
 .navBar a{
     float: left;
     color: lightgray;
@@ -94,9 +97,9 @@ td{
 /*GRID FOR DATA DISPLAY*/
 .gridData-Container{
     display: grid;
-    grid-template-columns: 80% 20%;
+    grid-template-columns: 50% 50%;
     margin: auto;
-    width: 50%;
+    width: 30%;
     border: 10px solid crimson;
     border-radius: 1em;
 }
@@ -104,9 +107,11 @@ td{
     background-color: silver;
     text-align: center;
     border: 1px solid black;
+    padding: 1em;
 }
 .gridData-Label{
     background-color: crimson;
     text-align: right;
     color: lightgrey;
+    padding: 1em;
 }

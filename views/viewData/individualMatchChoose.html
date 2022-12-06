@@ -25,7 +25,7 @@ teamInfo = database_io.returnTeamData(teamNumber)
         <h1>Select Match</h1>
         <form action = "individualMatchReceived" method = "post">
             <!--INPUT FOR MATCH-->
-            <select name = "matchNumber" required>
+            <select name = "matchNumber" required class = "selector">
                 %for entry in teamInfo:
                     <option value = "{{ entry[1] }}">{{entry[1]}}</option>
                 %end
