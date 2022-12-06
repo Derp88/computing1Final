@@ -14,10 +14,16 @@ autoHighScore = 0
 movedOffLine = 0
 teleLowScore = 0
 teleHighScore = 0
-climbBarSpot = 0 #An average just for this isn't super useful. Will also get a string represenation for that.
+climbBarSpot = 0
+
+bestMatchScore = 0
+bestMatchID = 0
+worstMatchScore = 900
+worstMatchID = 0
 
 #Gets total score
 for match in results:
+    #Finds avg match
     runs = runs + 1
     autoLowScore = autoLowScore + match[3]
     autoHighScore = autoHighScore + match[4]
@@ -25,6 +31,19 @@ for match in results:
     teleLowScore = teleLowScore + match[6]
     teleHighScore = teleHighScore + match[7]
     climbBarSpot = climbBarSpot + match[8]
+    
+    matchTotal = match[3] + match[4] + match[5] + match[6] + match[7] + match[8]
+    
+    #Finds best match
+    if (matchTotal > bestMatchScore):
+        bestMatchScore = matchTotal
+        bestMatchID = match[0]
+
+    #Finds worst match
+    if (matchTotal < worstMatchScore):
+        worstMatchScore = matchTotal
+        worstMatchID = match[0]
+
 end
 #Turns totals into averages
 autoLowScore = autoLowScore/runs
@@ -61,7 +80,8 @@ climbBarSpot = climbBarSpot/runs
             Climb Bar Spot: {{round(climbBarSpot,3)}} <br>
             <br>
 
-            Debug Results: {{results}}
+            The best match the team had was with ID: {{bestMatchID}}<br>
+            The worst  match the team had was with ID: {{worstMatchID}}<br>
         </p1>
     </body>
 </html>
