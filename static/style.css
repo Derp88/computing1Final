@@ -118,3 +118,10 @@ td{
     color: lightgrey;
     padding: 1em;
 }
+.gridData-Header{
+    background-color: crimson;
+    text-align: center;
+    color: lightgrey;
+    padding: 1em;
+    grid-column: 1 / span 2;
+}
